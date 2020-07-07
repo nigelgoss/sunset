@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<style>
+		* { font-family:Arial; }
+		h1 { font-size:1.2em; text-align:center; }
+		section { display:grid; grid-template-columns:1fr 1fr 1fr; }
+		button { cursor:pointer; border:2px solid white; min-height:35px; min-width:35px; }
+		textarea { resize:none; height:80px; }
+		fieldset { background-color:#eeeeee; margin:5px; border:2px solid grey; border-radius:10px; }
+		fieldset * { padding:2px; }
+		fieldset legend { font-size:1.2em; font-weight:bold; border:2px solid grey; border-radius:10px; background-color:#FAE100; }
+		fieldset > div { display:grid; grid-template-columns:auto 1fr; grid-gap:5px; }
+		td { padding:10px; }
+		tbody:nth-of-type(odd) { background-color:#fafafa; } tbody:nth-of-type(even) { background-color:#e6e6e6; }
+	</style>
+	
+	<script>
+	
+		function swap () {
+			document.querySelectorAll("main").forEach(function ($v) {
+				$v.style.display = ($v.style.display === "none") ? "block" : "none";
+				if ($v.style.display === "block") document.querySelector("header div#center").textContent = $v.id;
+			});
+		};
+		
+		function search () {
+			var $v = document.querySelector("tr#search");
+			$v.style.display = ($v.style.display === "none") ? "table-row" : "none";
+		};
+		
+	</script>
+</head>
+
+<body style="margin:0; font-size:10pt;" onload="swap();">
+
+<header style="color:#ffffff; background-color:#005EB8; text-align:center; font-weight:bold; padding:10px; display:flex;">
+	<div id="left" style="flex:0 0 auto;">
+		<button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">< Back</button>
+	</div><div id="center" style="flex:1 1 auto;">
+	</div><div id="right" style="flex:0 0 auto;">
+		<button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="void(0);">X</button>
+		<button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="void(0);">O</button>
+		<button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="void(0);">?</button>
+		<button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">=</button>
+	</div>
+</header>
+
+<main id="Patient List" style="display:none;">
+
+<table style="width:100%; border-collapse:collapse;">
+
+	<thead style="font-weight:bold; background-color:lightgrey; border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td>Location</td>
+			<td>NHS No.</td>
+			<td>Hospital No.</td>
+			<td>Name</td>
+			<td>Birth</td>
+			<td>Death</td>
+			<td style="width:1px; text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="search();">Q</button></td>
+		</tr><tr id="search" style="display:none;">
+			<td></td>
+			<td><input type="text"></td>
+			<td><input type="text"></td>
+			<td><input type="text"></td>
+			<td><input type="date"></td>
+			<td><input type="date"></td>
+			<td style="width:1px; text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;">></button></td>
+		</tr>
+	</thead>
+
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="3">THH-1</td>
+			<td>000-000-0000</td>
+			<td>00000000</td>
+			<td>SMITH, John (Mr)</td>
+			<td>01 Jan 1900</td>
+			<td>01 Jan 2020</td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-2</td>
+			<td>000-000-0000</td>
+			<td>00000000</td>
+			<td>SMITH, John (Mr)</td>
+			<td>01 Jan 1900</td>
+			<td>01 Jan 2020</td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr><tr>
+			<td colspan="5"><em>Notes: </em>Something...</td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-3</td>
+			<td>000-000-0000</td>
+			<td>00000000</td>
+			<td>SMITH, John (Mr)</td>
+			<td>01 Jan 1900</td>
+			<td>01 Jan 2020</td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr><tr>
+			<td colspan="5"><em>Notes: </em>Something...</td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-4</td>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-5</td>
+			<td>000-000-0000</td>
+			<td>00000000</td>
+			<td>SMITH, John (Mr)</td>
+			<td>01 Jan 1900</td>
+			<td>01 Jan 2020</td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr><tr>
+			<td colspan="5"><em>Notes: </em>Something...</td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-6-BAR</td>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-7</td>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr>
+	</tbody>
+	
+	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
+		<tr>
+			<td rowspan="2">THH-8</td>
+			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();">></button></td>
+		</tr>
+	</tbody>
+	
+</table>
+
+</main>
+
+<main id="Update Record" style="display:block;">
+
+<div style="color:#ffffff; background-color:#005EB8; height:70px;">PATIENT BANNER</div>
+
+Episode:
+<button>2</button>
+<button>1</button>
+<button>+</button>
+
+<section>
+
+<fieldset>
+	<legend>Body Registration</legend>
+	<div>
+		<label>Fridge tray no.</label><input type="text">
+		<label>Persons transferring body</label><input type="text">
+		<label>Religion</label><input type="text">
+		<label>Size</label><input type="text">
+		<label>Infection status</label><input type="text">
+		<label>Condition of body</label><input type="text">
+		<label>PM required</label><input type="text">
+		<label>Pacemaker</label><input type="text">
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Property</legend>
+	<div>
+		<label>Transferred to</label><input type="text">
+		<label>Date</label><input type="date">
+		<label>Details</label><textarea></textarea>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Valuables</legend>
+	<div>
+		<label>Transferred to</label><input type="text">
+		<label>Date</label><input type="date">
+		<label>Details</label><textarea></textarea>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Clothing</legend>
+	<div>
+		<label>Transferred to</label><input type="text">
+		<label>Date</label><input type="date">
+		<label>Details</label><textarea></textarea>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Babies</legend>
+	<div>
+		<label>Mothers name</label><input type="text">
+		<label>Mothers hospital no.</label><input type="text">
+		<label>Baby named</label><input type="text">
+		<label>Delivery date</label><input type="date">
+		<label>Gestation</label><input type="text">
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Funeral Arrangements</legend>
+	<div>
+		<label>Parents arranging</label><input type="text">
+		<label>Cremation / Burial</label><input type="text">
+		<label>Midwife / Nurse name</label><input type="text">
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Offsite Baby PM Details</legend>
+	<div>
+		<label>Destination</label><input type="text">
+		<label>Date sent</label><input type="date">
+		<label>Date returned</label><input type="date">
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Body Release</legend>
+	<div>
+		<label>Funeral director</label><input type="text">
+		<label>Persons releasing body</label><input type="text">
+		<label>Type of release</label><input type="text">
+		<label>Disposal certificate no.</label><input type="text">
+		<label>Condition of body form given</label><input type="text">
+		<label>Date</label><input type="date">
+		<label>Out of hours release</label><input type="text">
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Notes</legend>
+	<div>
+		<label>Notes</label><textarea></textarea>
+	</div>
+</fieldset>
+
+</section>
+
+<button style="width:100%; background-color:#007f3b; color:#ffffff;" onclick="swap();">Save</button>
+
+</main>
+
+</body>
+
+</html>
