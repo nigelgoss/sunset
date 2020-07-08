@@ -1,4 +1,4 @@
-@font-face { font-family:FARegular; url('resources/fa-regular-400.woff2') format('woff2'); }
+@font-face { font-family:FARegular; url('../resources/fa-regular-400.woff2') format('woff2'); }
 .faR { font-family:FARegular; }
-@font-face { font-family:FASolid; url('resources/fa-solid-900.woff2') format('woff2'); }
+@font-face { font-family:FASolid; url('../resources/fa-solid-900.woff2') format('woff2'); }
 .faS { font-family:FASolid; }
