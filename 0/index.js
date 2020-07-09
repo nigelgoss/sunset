@@ -6,6 +6,7 @@ const $ = {};
   [
   "pages/sign_in.js",
   "script/nav.js",
+    "pages/patient_list.js",
   ].forEach(function ($v) {
 
     let script = document.createElement("script"); document.head.appendChild(script);
