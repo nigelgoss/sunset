@@ -1,6 +1,6 @@
+const $ = {};
 (function () {
-  
-  const $ = {};
+
   $.pages = {};
   
   [
