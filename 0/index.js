@@ -14,8 +14,8 @@ const $ = {};
     
   });
   
-  let script = document.createElement("script"); document.head.appendChild(script);
-  script.defer = true;
-  script.textContent = "(function () { $.nav.goTo('Sign In'); }());";
+  window.onload = function () {
+    $.nav.goTo('Sign In'); }());
+};
   
 }());
