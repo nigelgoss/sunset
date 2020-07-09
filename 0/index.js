@@ -13,4 +13,7 @@ const $ = {};
     
   });
   
+  let script = document.createElement("script"); document.head.appendChild(script);
+  script.textContent = "(function () { $.nav.goTo("Sign In"); }());";
+  
 }());
