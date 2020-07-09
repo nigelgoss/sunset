@@ -4,6 +4,10 @@
     $.nav.goTo(main);
   };
   
+  function back () {
+    $.nav.goTo(main);
+  };
+  
   let main = document.createElement("main");
   
   let button = document.createElement("button"); main.appendChild(button);
