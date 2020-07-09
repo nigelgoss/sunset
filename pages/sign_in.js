@@ -1,11 +1,11 @@
 (function () {
   
-  function load () {
-    $.nav.goTo(main);
+  function load ($d, $cb) {
+    $cb(main);
   };
   
-  function back () {
-    $.nav.goTo(main);
+  function back ($d, $cb) {
+    $cb(main);
   };
   
   let main = document.createElement("main");
