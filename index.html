@@ -58,9 +58,9 @@
 	<thead style="font-weight:bold; background-color:lightgrey; border:0 solid white; border-width:2px 0 2px 0;">
 		<tr>
 			<td>Location</td>
+			<td>Name</td>
 			<td>NHS No.</td>
 			<td>Hospital No.</td>
-			<td>Name</td>
 			<td>Birth</td>
 			<td>Death</td>
 			<td style="width:1px; text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="search();"><span class="faS"></span></button></td>
@@ -78,9 +78,9 @@
 	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
 		<tr>
 			<td rowspan="3">THH-1</td>
+			<td>SMITH, John (Mr)</td>
 			<td>000-000-0000</td>
 			<td>00000000</td>
-			<td>SMITH, John (Mr)</td>
 			<td>01 Jan 1900</td>
 			<td>01 Jan 2020</td>
 			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();"><span class="faS"></span></button></td>
@@ -90,9 +90,9 @@
 	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
 		<tr>
 			<td rowspan="2">THH-2</td>
+			<td>SMITH, John (Mr)</td>
 			<td>000-000-0000</td>
 			<td>00000000</td>
-			<td>SMITH, John (Mr)</td>
 			<td>01 Jan 1900</td>
 			<td>01 Jan 2020</td>
 			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();"><span class="faS"></span></button></td>
@@ -104,9 +104,9 @@
 	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
 		<tr>
 			<td rowspan="2">THH-3</td>
+			<td>SMITH, John (Mr)</td>
 			<td>000-000-0000</td>
 			<td>00000000</td>
-			<td>SMITH, John (Mr)</td>
 			<td>01 Jan 1900</td>
 			<td>01 Jan 2020</td>
 			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();"><span class="faS"></span></button></td>
@@ -130,9 +130,9 @@
 	<tbody style="border:0 solid white; border-width:2px 0 2px 0;">
 		<tr>
 			<td rowspan="2">THH-5</td>
+			<td>SMITH, John (Mr)</td>
 			<td>000-000-0000</td>
 			<td>00000000</td>
-			<td>SMITH, John (Mr)</td>
 			<td>01 Jan 1900</td>
 			<td>01 Jan 2020</td>
 			<td rowspan="2" style="text-align:right;"><button style="background-color:#007f3b; color:#ffffff; border-radius:999px;" onclick="swap();"><span class="faS"></span></button></td>
@@ -196,7 +196,6 @@ Episode:
 	<legend>Body Registration</legend>
 	<div>
 		<label>Fridge tray no.</label><input type="text">
-		<label>Persons transferring body</label><input type="text">
 		<label>Religion</label><input type="text">
 		<label>Size</label><input type="text">
 		<label>Infection status</label><input type="text">
@@ -209,27 +208,28 @@ Episode:
 <fieldset>
 	<legend>Property</legend>
 	<div>
+		<label>Details</label><textarea></textarea>
 		<label>Transferred to</label><input type="text">
 		<label>Date</label><input type="date">
-		<label>Details</label><textarea></textarea>
 	</div>
 </fieldset>
 
 <fieldset>
 	<legend>Valuables</legend>
 	<div>
+		<label>Details</label><textarea></textarea>
 		<label>Transferred to</label><input type="text">
 		<label>Date</label><input type="date">
-		<label>Details</label><textarea></textarea>
 	</div>
 </fieldset>
 
 <fieldset>
 	<legend>Clothing</legend>
 	<div>
+		<label>Details</label><textarea></textarea>
 		<label>Transferred to</label><input type="text">
 		<label>Date</label><input type="date">
-		<label>Details</label><textarea></textarea>
+		
 	</div>
 </fieldset>
 
@@ -254,7 +254,7 @@ Episode:
 </fieldset>
 
 <fieldset>
-	<legend>Offsite Baby PM Details</legend>
+	<legend>Offsite PM Details</legend>
 	<div>
 		<label>Destination</label><input type="text">
 		<label>Date sent</label><input type="date">
@@ -272,6 +272,8 @@ Episode:
 		<label>Condition of body form given</label><input type="text">
 		<label>Date</label><input type="date">
 		<label>Out of hours release</label><input type="text">
+		<label>Hospital arranged funderal</label><input type="text">
+		<label>Infection form given</label><input type="text">
 	</div>
 </fieldset>
 
