@@ -16,7 +16,7 @@ const $ = {};
   });
   
   window.onload = function () {
-    $.nav.goTo('Sign In');
+    $.nav.goTo("Sign In");
 };
   
 }());
