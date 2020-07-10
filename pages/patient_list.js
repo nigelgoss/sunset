@@ -9,7 +9,10 @@
   };
   
   let main = document.createElement("main");
-  main.textContent = "Sign In";
+  
+  let button = document.createElement("button");
+  button.textContent = "Episode";
+  button.onpointerdown = function () { $.nav.goTo("Episode", {"EPN":1, "Episode":1}); };
   
   $.pages["Patient List"] = {
     "forwards": load,
