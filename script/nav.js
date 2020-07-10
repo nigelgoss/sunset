@@ -22,6 +22,7 @@
     let main = document.body.querySelector("main");
     main.parentNode.replaceChild($d.ele, main);
     title.textContent = $d.title;
+    buttonBack.style.display = (history.length > 1) ? "inline-block" : "none";
   };
   
   let header = document.createElement("header");
@@ -29,9 +30,9 @@
   header.style.padding = "10px";
   header.style.textAlign = "center";
   
-  let button = document.createElement("button"); header.appendChild(button);
-  button.textContent = "Back";
-  button.onpointerdown = function () { $.nav.back(); };
+  const buttonBack = document.createElement("button"); header.appendChild(buttonBack);
+  buttonBack.textContent = "Back";
+  buttonBack.onpointerdown = function () { $.nav.back(); };
   
   const title = document.createElement("span"); header.appendChild(title);
   
