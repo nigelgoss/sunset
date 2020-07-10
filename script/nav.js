@@ -3,7 +3,7 @@
   const history = [];
   
   function goTo ($page, $input) {
-    if ($page === history.slice(-1)[0].page) return; 
+    if ($page === history.slice(-1)[0]?.page) return; 
     $.pages[$page].forwards($input, function ($ele) {
       history.push({"page":$page, "input":$input});
       updateViewport($ele);
