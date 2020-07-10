@@ -10,6 +10,12 @@
     document.body.querySelector("header").textContent = $d.title;
   };
   
+  let header = document.createElement("header");
+  header.style.backgroundColor = "blue";
+  
+  let oldHeader = document.body.querySelector("header");
+  oldHeader.parentNode.replaceChild(header, oldHeader);
+  
   $.nav = {
     "goTo": goTo
   };
