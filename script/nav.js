@@ -3,9 +3,10 @@
   const history = [];
   
   function goTo ($page, $input) {
+    if ($page === history.slice(-1)[0].page) return; 
     $.pages[$page].forwards($input, function ($ele) {
       history.push({"page":$page, "input":$input});
-      updateViewport({"title":$page, "ele":$ele});
+      updateViewport($ele);
     });
   };
   
@@ -14,14 +15,14 @@
     history.pop();
     let d = history.slice(-1)[0];
     $.pages[d.page].forwards(d.input, function ($ele) {
-      updateViewport({"title":d.page, "ele":$ele});
+      updateViewport($ele);
     });
   };
   
-  function updateViewport ($d) {
+  function updateViewport ($ele) {
     let main = document.body.querySelector("main");
-    main.parentNode.replaceChild($d.ele, main);
-    title.textContent = $d.title;
+    main.parentNode.replaceChild($ele, main);
+    title.textContent = history.slice(-1)[0].page;
     buttonBack.style.display = (history.length > 2) ? "inline-block" : "none";
   };
   
