@@ -4,8 +4,8 @@
   
   function goTo ($page, $input) {
     $.pages[$page].forwards($input, function ($ele) {
-      updateViewport({"title":$page, "ele":$ele});
       history.push({"page":$page, "input":$input});
+      updateViewport({"title":$page, "ele":$ele});
     });
   };
   
@@ -22,7 +22,6 @@
     let main = document.body.querySelector("main");
     main.parentNode.replaceChild($d.ele, main);
     title.textContent = $d.title;
-    console.log(history);
     buttonBack.style.display = (history.length > 2) ? "inline-block" : "none";
   };
   
