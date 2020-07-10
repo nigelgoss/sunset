@@ -1,7 +1,7 @@
 (function () {
   
   function load ($d, $cb) {
-     main.textContent = JSON.stringify();
+     main.textContent = JSON.stringify($d);
     $cb(main);
   };
   
