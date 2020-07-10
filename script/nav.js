@@ -10,7 +10,8 @@
   };
   
   function back ($refresh) {
-    history.pop()
+    if (history.length <= 2) return;
+    history.pop();
     let d = history.slice(-1)[0];
     $.pages[d.page].forwards(d.input, function ($ele) {
       updateViewport({"title":d.page, "ele":$ele});
