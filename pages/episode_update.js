@@ -1,6 +1,7 @@
 (function () {
   
   function load ($d, $cb) {
+     main.textContent = JSON.stringify();
     $cb(main);
   };
   
@@ -8,8 +9,7 @@
     $cb(main);
   };
   
-  let main = document.createElement("main");
-  main.textContent = "*";
+  const main = document.createElement("main");
   
   $.pages["Episode Update"] = {
     "forwards": load,
