@@ -22,6 +22,7 @@
     let main = document.body.querySelector("main");
     main.parentNode.replaceChild($d.ele, main);
     title.textContent = $d.title;
+    console.log(history);
     buttonBack.style.display = (history.length > 1) ? "inline-block" : "none";
   };
   
