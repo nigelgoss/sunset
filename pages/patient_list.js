@@ -12,7 +12,7 @@
   
   let button = document.createElement("button");
   button.textContent = "Episode";
-  button.onpointerdown = function () { $.nav.goTo("Episode", {"EPN":1, "Episode":1}); };
+  button.onpointerdown = function () { $.nav.goTo("Episode Update", {"EPN":1, "Episode":1}); };
   
   $.pages["Patient List"] = {
     "forwards": load,
