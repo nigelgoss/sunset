@@ -11,7 +11,7 @@
   
   function back ($refresh) {
     history.pop()
-    let d = history.pop();
+    let d = history.slice(-1)[0];
     $.pages[d.page].forwards(d.input, function ($ele) {
       updateViewport({"title":d.page, "ele":$ele});
     });
