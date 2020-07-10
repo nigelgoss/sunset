@@ -10,7 +10,7 @@
   
   let main = document.createElement("main");
   
-  let button = document.createElement("button");
+  let button = document.createElement("button"); main.appendChild(button);
   button.textContent = "Episode";
   button.onpointerdown = function () { $.nav.goTo("Episode Update", {"EPN":1, "Episode":1}); };
   
