@@ -1,7 +1,20 @@
 (function () {
   
+  let history = [];
+  
   function goTo ($page, $input) {
-    $.pages[$page].forwards($input, function ($ele) { updateViewport({"title":$page, "ele":$ele}); } );
+    $.pages[$page].forwards($input, function ($ele) {
+      updateViewport({"title":$page, "ele":$ele});
+      history.push({"page":$page, "input":$input});
+    });
+  };
+  
+  function back ($refresh) {
+    history.pop()
+    let d = history.pop();
+    $.pages[d.page].forwards(d.input, function ($ele) {
+      updateViewport({"title":d.page, "ele":$ele});
+    });
   };
   
   function updateViewport ($d) {
@@ -25,7 +38,8 @@
   oldHeader.parentNode.replaceChild(header, oldHeader);
   
   $.nav = {
-    "goTo": goTo
+    "goTo": goTo,
+    "back": back,
   };
   
 }());
