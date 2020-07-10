@@ -11,7 +11,9 @@
   };
   
   let header = document.createElement("header");
-  header.style.backgroundColor = "blue";
+  header.style.backgroundColor = "lightblue";
+  header.style.padding = "10px";
+  header.style.textAlign = "center";
   
   let oldHeader = document.body.querySelector("header");
   oldHeader.parentNode.replaceChild(header, oldHeader);
