@@ -22,7 +22,7 @@
     let main = document.body.querySelector("main");
     main.parentNode.replaceChild($d.ele, main);
     title.textContent = $d.title;
-    buttonBack.style.display = (history.length > 2) ? "inline-block" : "none";
+    buttonBack.style.display = (history.length > 1) ? "inline-block" : "none";
   };
   
   let header = document.createElement("header");
