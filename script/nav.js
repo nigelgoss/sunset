@@ -28,6 +28,10 @@
   header.style.padding = "10px";
   header.style.textAlign = "center";
   
+  let button = document.createElement("button"); header.appendChild(button);
+  button.textContent = "Back";
+  button.onpointerdown = function () { $.nav.back(); };
+  
   const title = document.createElement("span"); header.appendChild(title);
   
   let button = document.createElement("button"); header.appendChild(button);
