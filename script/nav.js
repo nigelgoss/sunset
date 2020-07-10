@@ -10,7 +10,7 @@
   };
   
   function back ($refresh) {
-    if (history.length === 1) return;
+    if (history.length <= 2) return;
     history.pop();
     let d = history.slice(-1)[0];
     $.pages[d.page].forwards(d.input, function ($ele) {
