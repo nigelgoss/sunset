@@ -11,7 +11,7 @@ const $ = {};
   ].forEach(function ($v) {
 
     let script = document.createElement("script"); document.head.appendChild(script);
-    script.defer = true;
+    //script.defer = true;
     script.src = $v;
     
   });
