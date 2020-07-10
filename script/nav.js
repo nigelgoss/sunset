@@ -1,6 +1,6 @@
 (function () {
   
-  let history = [];
+  const history = [];
   
   function goTo ($page, $input) {
     $.pages[$page].forwards($input, function ($ele) {
