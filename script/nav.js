@@ -34,7 +34,7 @@
   
   const title = document.createElement("span"); header.appendChild(title);
   
-  let button = document.createElement("button"); header.appendChild(button);
+  button = document.createElement("button"); header.appendChild(button);
   button.textContent = "Admin";
   button.onpointerdown = function () { $.nav.goTo("Admin"); };
   
