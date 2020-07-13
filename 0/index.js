@@ -6,7 +6,7 @@ const $ = {};
 		"set": function ($d) {
 			if (this.onpointerdown === null) this.onpointerdown = () => {
 				if (throttleTimer !== undefined) return;
-				setTimeout(() => { throttleTimer = undefined; }, 500);
+				setTimeout(() => { throttleTimer = undefined; }, 2000);
 				this.ng.ngpointerdown();
 			};
 			if (this.ng === undefined) this.ng = {}; 
