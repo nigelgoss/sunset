@@ -51,7 +51,7 @@ button.ngpointerdown = () => {};
 	span.className = "faS";
 	span.textContent = "";
 
-const build () => {
+const build = () => {
 
 	const $d = [{}, {}, {}, {}, {}];
 	
