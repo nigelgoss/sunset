@@ -5,7 +5,7 @@ const $ = {};
 		$mutationsList.forEach(function ($x) {
 			$x.addedNodes.forEach(function ($y) {
 				if (typeof $y.ngpointerdown !== "function") return;
-				$y.ngpointerdown = $y.onpointerdown;
+				$y.onpointerdown = $y.ngpointerdown;
 			});
 		});
 	}).observe(document.body, { attributes:true, childList:true });
