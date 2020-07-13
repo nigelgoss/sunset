@@ -2,3 +2,4 @@
 @font-face { font-family:FASolid; src:url('../resources/fa-solid-900.woff2') format('woff2'); } .faS { font-family:FASolid; }
 
 * { font-family:Arial; }
+button { padding:10px; }
