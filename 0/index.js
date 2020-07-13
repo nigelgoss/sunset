@@ -1,12 +1,12 @@
 const $ = {};
 (function () {
 
-	//let throttleTimer;
+	let throttleTimer;
 	Object.defineProperty(HTMLElement.prototype, "ngpointerdown", {
 		"set": function ($d) {
 			if (this.onpointerdown === null) this.onpointerdown = () => {
-				if (typeof throttleTimer !== "undefined") return;
-				let throttleTimer = setTimeout(() => { throttleTimer = undefined; }, 2000);
+				if (throttleTimer !== undefined) return;
+				throttleTimer = setTimeout(() => { throttleTimer = undefined; }, 2000);
 				this.ng.ngpointerdown();
 			};
 			if (this.ng === undefined) this.ng = {}; 
