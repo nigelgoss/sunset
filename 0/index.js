@@ -48,4 +48,4 @@ $.pages = {};
   
 window.onload = () => { $.nav.goTo("Sign In"); };
 
-}());
+})();
