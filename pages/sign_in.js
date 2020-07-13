@@ -14,6 +14,10 @@
   button.textContent = "Sign In";
   button.ngpointerdown = function () { $.nav.goTo("Patient List"); };
   
+  button = document.createElement("button"); main.appendChild(button);
+  button.textContent = "Count";
+  button.ngpointerdown = function () { console.log(1); };
+  
   $.pages["Sign In"] = {
     "forwards": load,
     "backwards": back,
