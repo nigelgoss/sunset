@@ -1,6 +1,7 @@
 $.pages["Patient List"] = (() => {
 
 const load = ($d, $cb) => {
+	build();
 	$cb(main);
 };
 
@@ -34,7 +35,7 @@ td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
 td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";
 				
 td = document.createElement("td"); tr.appendChild(td);
-tr.ngstyle = {
+td.ngstyle = {
 	width: "1px",
 	textAlign: "right",
 };
@@ -45,15 +46,42 @@ button.ngstyle = {
 	color: "#ffffff",
 	borderRadius: "999px",
 };
-button.onpointerdown = () => {};
+button.ngpointerdown = () => {};
+	let span = document.createElement("span"); button.appendChild(span);
+	span.className = "faS";
+	span.textContent = "";
 
-let span = document.createElement("span"); button.appendChild(span);
-span.className = "faS";
-span.textContent = ""
+const build () => {
+
+	const $d = [{}, {}, {}, {}, {}];
+	
+	$d.forEach(($v) => {
+	
+		let tbody = document.createElement("thead"); table.appendChild(tbody);
+		tbody.ngstyle = {
+			border: "0 solid white",
+			borderWidth: "2px 0 2px 0",
+		};
+
+		let tr = document.createElement("tr"); tbody.appendChild(tr);
+
+		let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";
+
+		td = document.createElement("td"); tr.appendChild(td);
+		button = document.createElement("button"); td.appendChild(button);
+		button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":1, "Episode":1}); };
+			let span = document.createElement("span"); button.appendChild(span);
+			span.className = "faS";
+			span.textContent = "";
 		
-button = document.createElement("button"); main.appendChild(button);
-button.textContent = "Episode";
-button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":1, "Episode":1}); };
+	};
+
+};
 
 return {
 	"forwards": load,
