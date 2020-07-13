@@ -5,7 +5,7 @@ const $ = {};
 	Object.defineProperty(HTMLElement.prototype, "ngpointerdown", {
 		"set": function ($d) {
 			if (this.onpointerdown === null) this.onpointerdown = () => {
-				if (throttleTimer !== undefined) return;
+				if (typeof throttleTimer !== "undefined") return;
 				let throttleTimer = setTimeout(() => { throttleTimer = undefined; }, 2000);
 				this.ng.ngpointerdown();
 			};
