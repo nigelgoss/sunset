@@ -6,12 +6,12 @@ const $ = {};
 		
 		"ngpointerdown": {
 			"set": ($d) => {
+				if (this.ng === undefined) this.ng = {}; 
 				if (this.onpointerdown === null) this.onpointerdown = () => {
-					if (new Date() - throttleDate < this?.ng?.ngthrottle ?? 500) return;
+					if (new Date() - throttleDate < this.ng.ngthrottle ?? 500) return;
 					throttleDate = new Date();
 					this.ng.ngpointerdown();
 				};
-				if (this.ng === undefined) this.ng = {}; 
 				this.ng.ngpointerdown = $d;
 			},
 			"get": () => {
