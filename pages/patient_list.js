@@ -1,10 +1,10 @@
-$.pages["Patient List"] = (function () {
+$.pages["Patient List"] = (() => {
 
-function load ($d, $cb) {
+const load ($d, $cb) => {
 	$cb(main);
 };
 
-function back ($d, $cb) {
+const back ($d, $cb) => {
 	$cb(main);
 };
 
