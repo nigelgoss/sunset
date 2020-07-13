@@ -12,7 +12,7 @@ const back = ($d, $cb) => {
 const main = document.createElement("main");
 
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
-patientBanner.ngstyle {
+patientBanner.ngstyle = {
 	color: "#ffffff",
 	backgroundColor: "#005EB8",
 	height: "70px",
