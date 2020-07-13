@@ -8,7 +8,7 @@ Object.defineProperties(HTMLElement.prototype, {
 		"set": function ($d) {
 			if (this._ngX === undefined) this._ngX = {}; 
 			if (this.onpointerdown === null) this.onpointerdown = () => {
-				if (throttle.ele === this && new Date() - throttle.date < (this.ngthrottle ?? 5000)) return;
+				if (throttle.ele === this && new Date() - throttle.date < (this.ngthrottle ?? 500)) return;
 				throttle.date = new Date();
 				throttle.ele = this;
 				this._ngX.pointerdown();
