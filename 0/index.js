@@ -19,7 +19,7 @@ const $ = {};
 			},
 		},
 					
-		"ngthrottle" {
+		"ngthrottle": {
 			"set": ($d) => {
 				if (this.ng === undefined) this.ng = {}; 
 				this.ng.ngthrottle = $d;	
