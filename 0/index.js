@@ -7,7 +7,7 @@ const $ = {};
 		"ngpointerdown": {
 			"set": ($d) => {
 				if (this.onpointerdown === null) this.onpointerdown = () => {
-					if (throttleDate - new Date() < this?.ng?.ngthrottle || 500) return;
+					if (new Date() - throttleDate < this?.ng?.ngthrottle || 500) return;
 					throttleDate = new Date();
 					this.ng.ngpointerdown();
 				};
