@@ -10,6 +10,12 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
+main.id = "PatientList";
+
+let style = document.createElement("style"); main.appendChild(style);
+style.textContent = [
+	"PatientList td { padding:10px; }"
+].join("\n");
 
 let table = document.createElement("table"); main.appendChild(table);
 table.ngstyle = {
