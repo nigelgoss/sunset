@@ -56,7 +56,7 @@ return {
 	"backwards": back,
 };
 
-}());
+})();
 
 
 /*
