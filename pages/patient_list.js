@@ -10,46 +10,50 @@ const back = ($d, $cb) => {
 
 const main = document.createElement("main");
 
-	let table = document.createElement("table"); main.appendChild(table);
-	table.style.width = "100%";
-	table.style.borderCollapse = "collapse";
-	
-		let thead = document.createElement("thead"); table.appendChild(thead);
-		thead.style.fontWeight = "bold";
-		thead.style.backgroundColor = "lightgrey";
-		thead.style.border = "0 solid white";
-		thead.style.borderWidth = "2px 0 2px 0";
-		
-			let tr = document.createElement("tr"); thead.appendChild(tr);
+let table = document.createElement("table"); main.appendChild(table);
+table.ngstyle = {
+	width: "100%",
+	borderCollapse: "collapse",
+};
+
+let thead = document.createElement("thead"); table.appendChild(thead);
+thead.ngstyle = {
+	fontWeight: "bold",
+	backgroundColor: "lightgrey",
+	border: "0 solid white",
+	borderWidth: "2px 0 2px 0",
+};
+
+let tr = document.createElement("tr"); thead.appendChild(tr);
+
+let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";
 				
-				let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
-				td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
-				td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
-				td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
-				td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
-				td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";
+td = document.createElement("td"); tr.appendChild(td);
+tr.ngstyle = {
+	width: "1px",
+	textAlign: "right",
+};
 				
-				td = document.createElement("td"); tr.appendChild(td);
-				tr.style.width = "1px";
-				tr.style.textAlign = "right";
-				
-					let button = document.createElement("button"); td.appendChild(button);
-					button.style.backgroundColor = "#007f3b";
-					button.style.color = "#ffffff";
-					button.style.borderRadius = "999px";
-					button.onpointerdown = function () {};;
-					
-						let span = document.createElement("span"); button.appendChild(span);
-						span.className = "faS";
-						span.textContent = ""
-		
-		
+let button = document.createElement("button"); td.appendChild(button);
+button.ngstyle = {
+	backgroundColor: "#007f3b",
+	color: "#ffffff",
+	borderRadius: "999px",
+};
+button.onpointerdown = () => {};
+
+let span = document.createElement("span"); button.appendChild(span);
+span.className = "faS";
+span.textContent = ""
 		
 button = document.createElement("button"); main.appendChild(button);
 button.textContent = "Episode";
-button.ngpointerdown = function () {
-	$.nav.goTo("Episode Update", {"EPN":1, "Episode":1});
-};
+button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":1, "Episode":1}); };
 
 return {
 	"forwards": load,
