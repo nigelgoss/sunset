@@ -1,7 +1,7 @@
 $.pages["Episode Update"] = (() => {
 
 const load = ($d, $cb) => {
-	main.textContent = JSON.stringify($d);
+	build();
 	$cb(main);
 };
 
