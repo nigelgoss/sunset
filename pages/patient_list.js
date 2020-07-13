@@ -55,9 +55,11 @@ const build = () => {
 
 	const $d = [{}, {}, {}, {}, {}];
 	
-	$d.forEach(($v) => {
+	table.querySelectorAll("tbody").forEach(($v) => { $v.parentElement.removeChild($v); });
 	
-		let tbody = document.createElement("thead"); table.appendChild(tbody);
+	$d.forEach(($v) => {
+		
+		let tbody = document.createElement("tbody"); table.appendChild(tbody);
 		tbody.ngstyle = {
 			border: "0 solid white",
 			borderWidth: "2px 0 2px 0",
