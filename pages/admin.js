@@ -1,17 +1,17 @@
-(() => {
+$.pages["Admin"] = (() => {
 
-function load ($d, $cb) {
+const load ($d, $cb) => {
 	$cb(main);
 };
 
-function back ($d, $cb) {
+const back ($d, $cb) => {
 	$cb(main);
 };
 
 const main = document.createElement("main");
 main.textContent = "*";
 
-$.pages["Admin"] = {
+return {
 	"forwards": load,
 	"backwards": back,
 };
