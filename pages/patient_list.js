@@ -65,19 +65,19 @@ const build = () => {
 
 		let tr = document.createElement("tr"); tbody.appendChild(tr);
 
-		let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";
+		let td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Location;
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Name;
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.NHSNo;
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.HospitalNo;
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Birth;
+		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Death;
 
 		td = document.createElement("td"); tr.appendChild(td);
 		button = document.createElement("button"); td.appendChild(button);
-		button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":1, "Episode":1}); };
+		button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":$v.EPN, "Episode":$v.Episode}); };
 			let span = document.createElement("span"); button.appendChild(span);
 			span.className = "faS";
-			span.textContent = "";
+			span.textContent = "";
 		
 	});
 
