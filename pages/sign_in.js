@@ -11,8 +11,8 @@ const back = ($d, $cb) => {
 const main = document.createElement("main");
 main.ngstyle = {
 	flex: "1 1 auto",
-	"display": "grid",
-	"place-items": "center",
+	display: "grid",
+	place-items: "center",
 };
 
 let button = document.createElement("button"); main.appendChild(button);
