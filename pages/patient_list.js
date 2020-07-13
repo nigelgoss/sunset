@@ -10,13 +10,12 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
-main.id = "PatientList";
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
-	"#PatientList tbody:nth-of-type(odd) { background-color:#fafafa; }",
-	"#PatientList tbody:nth-of-type(even) { background-color:#e6e6e6; }",
-	"#PatientList td { padding:10px; }",
+	"main tbody:nth-of-type(odd) { background-color:#fafafa; }",
+	"main tbody:nth-of-type(even) { background-color:#e6e6e6; }",
+	"main td { padding:10px; }",
 ].join("\n");
 
 let table = document.createElement("table"); main.appendChild(table);
