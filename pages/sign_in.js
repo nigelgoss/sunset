@@ -18,6 +18,10 @@
   button.textContent = "Count";
   button.ngpointerdown = function () { console.log(1); };
   
+   button = document.createElement("button"); main.appendChild(button);
+  button.textContent = "Count";
+  button.ngpointerdown = function () { console.log(2); };
+  
   $.pages["Sign In"] = {
     "forwards": load,
     "backwards": back,
