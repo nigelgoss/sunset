@@ -1,15 +1,10 @@
 const $ = {};
 (function () {
 
-	new MutationObserver(function ($mutationsList) {
-		$mutationsList.forEach(function ($x) {
-			$x.addedNodes.forEach(function ($y) {
-				console.log($y);
-				if (typeof $y.ngpointerdown !== "function") return;
-				$y.onpointerdown = $y.ngpointerdown;
-			});
-		});
-	}).observe(document.body, { attributes:true, childList:true });
+	Object.defineProperty(HTMLElement.prototype, "ngpointerdown", {
+		set: function ($d) { console.log(this, $d); },
+		get: function () { return 1; }
+	});
   
   $.pages = {};
   
