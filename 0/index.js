@@ -46,9 +46,6 @@ $.pages = {};
 	let script = document.createElement("script"); document.head.appendChild(script);
 	script.src = $v;
 });
-
-document.documentElement.style.height = "100%";
-document.body.style.height = "100%";
 			
 window.onload = () => { $.nav.goTo("Sign In"); };
 
