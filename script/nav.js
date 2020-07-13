@@ -33,13 +33,13 @@ header.style.textAlign = "center";
 
 const buttonBack = document.createElement("button"); header.appendChild(buttonBack);
 buttonBack.textContent = "Back";
-buttonBack.onpointerdown = function () { $.nav.back(); };
+buttonBack.ngpointerdown = function () { $.nav.back(); };
 
 const title = document.createElement("span"); header.appendChild(title);
 
 button = document.createElement("button"); header.appendChild(button);
 button.textContent = "Admin";
-button.onpointerdown = function () { $.nav.goTo("Admin"); };
+button.ngpointerdown = function () { $.nav.goTo("Admin"); };
 
 let oldHeader = document.body.querySelector("header");
 oldHeader.parentNode.replaceChild(header, oldHeader);
