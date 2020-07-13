@@ -11,22 +11,41 @@ const back = ($d, $cb) => {
 
 const main = document.createElement("main");
 
+const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
+patientBanner.ngstyle {
+	color: "#ffffff",
+	backgroundColor: "#005EB8",
+	height: "70px",
+};
+patientBanner.textContent = "PATIENT BANNER";
+
+const $d = ["3", "2", "1"];
+
+const episodeBanner = document.createElement("div"); main.appendChild(episodeBanner);
+
+const build = () => {
+	
+	episodeBanner.textContent = "Episode: ";
+	
+	$d.forEach(($v) => {		
+		let button = document.createElement("button"); episodeBanner.appendChild(button);
+		button.textContent = $v;
+	});
+	
+	button = document.createElement("button"); episodeBanner.appendChild(button);
+	button.textContent = "+";
+	
+};
+	
 return {
 	"forwards": load,
 	"backwards": back,
 };
 
 })();
+	
+	
 /*
-
-<main id="Update Record" style="display:block;">
-
-<div style="color:#ffffff; background-color:#005EB8; height:70px;">PATIENT BANNER</div>
-
-Episode:
-<button>2</button>
-<button>1</button>
-<button>+</button>
 
 <section>
 
