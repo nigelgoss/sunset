@@ -2,8 +2,14 @@ const $ = {};
 (function () {
 
 	Object.defineProperty(HTMLElement.prototype, "ngpointerdown", {
-		set: function ($d) { console.log(this, $d); },
-		get: function () { return 1; }
+		"set": function ($d) {
+			if (this.onpointerdown !== null) this.onpointerdown = this.ng.ngpointerdown;
+			if (this.ng === undefined) this.ng = {}; 
+			this.ng.ngpointerdown = $d;
+		},
+		"get": function () {
+			return this?.ng?.ngpointerdown;
+		},
 	});
   
   $.pages = {};
