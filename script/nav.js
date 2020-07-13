@@ -35,17 +35,21 @@ header.ngstyle = {
 };
 
 let div = document.createElement("div"); header.appendChild(div);
-div.ngstyle = { flex: "1 1 auto", };
+div.ngstyle = { flex: "0 0 auto", };
 
 const buttonBack = document.createElement("button"); div.appendChild(buttonBack);
 buttonBack.textContent = "Back";
 buttonBack.ngpointerdown = () => { $.nav.back(); };
 
 const title = document.createElement("div"); header.appendChild(title);
-title.ngstyle = { flex: "1 1 auto", };
+title.ngstyle = {
+	flex: "1 1 auto",
+	display: "grid",
+	placeItems: "center",
+};
 
 div = document.createElement("div"); header.appendChild(div);
-div.ngstyle = { flex: "1 1 auto", };
+div.ngstyle = { flex: "0 0 auto", };
 
 buttonAdmin = document.createElement("button"); div.appendChild(buttonAdmin);
 buttonAdmin.textContent = "Admin";
