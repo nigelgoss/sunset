@@ -30,6 +30,7 @@ const build = () => {
 	$d.forEach(($v) => {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
 		button.textContent = $v;
+		button.ngpointerdown = () => {};
 	});
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
