@@ -1,4 +1,4 @@
-(() => {
+$.pages["Episode Update"] = (() => {
 
 const load ($d, $cb) => {
 	main.textContent = JSON.stringify($d);
@@ -11,7 +11,7 @@ const back ($d, $cb) => {
 
 const main = document.createElement("main");
 
-$.pages["Episode Update"] = {
+return {
 	"forwards": load,
 	"backwards": back,
 };
