@@ -1,6 +1,11 @@
 const $ = {};
 (function () {
 
+	HTMLElement.prototype.ngpointerdown = ($ele) => {
+		if ($ele.onpointerdown !== "function") return;
+		$ele.onpointerdown();
+	};
+  
   $.pages = {};
   
   [
