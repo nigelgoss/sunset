@@ -10,19 +10,33 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
+main.ngstyle = { display: "flex", };
 
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
 patientBanner.ngstyle = {
 	color: "#ffffff",
 	backgroundColor: "#005EB8",
 	height: "70px",
+	flex: "0 0 auto",
 };
 patientBanner.textContent = "PATIENT BANNER";
 
 const $d = ["3", "2", "1"];
 
 const episodeBanner = document.createElement("div"); main.appendChild(episodeBanner);
+episodeBanner.ngstyle = { flex: "0 0 auto", };
+	
+let div = document.createElement("div"); main.appendChild(div);
+div.ngstyle = { flex: "1 1 auto", };
 
+let button = document.createElement("button"); main.appendChild(button);
+button.ngstyle = { flex: "0 0 auto", width: "100%", backgroundColor: "#007f3b", color: "#ffffff", };
+let span = document.createElement("span"); button.appendChild(span);
+span.className = "faS";
+span.textContent = "";
+button.appendChild(document.createTextNode(" Save"));
+button.ngpointerdown = () => {};
+	
 const build = () => {
 	
 	episodeBanner.textContent = "Episode: ";
