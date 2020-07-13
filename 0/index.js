@@ -9,7 +9,7 @@ Object.defineProperties(HTMLElement.prototype, {
 			this.style.cursor = "pointer";
 			if (this._ngX === undefined) this._ngX = {}; 
 			if (this.onpointerdown === null) this.onpointerdown = () => {
-				if (throttle.ele === this && new Date() - throttle.date < (this.ngthrottle ?? 500)) return;
+				if (throttle.ele === this && new Date() - throttle.date < (this.ngthrottle ?? 333)) return;
 				throttle.date = new Date();
 				throttle.ele = this;
 				this._ngX.pointerdown();
