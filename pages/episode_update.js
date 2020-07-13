@@ -1,11 +1,11 @@
 $.pages["Episode Update"] = (() => {
 
-const load ($d, $cb) => {
+const load = ($d, $cb) => {
 	main.textContent = JSON.stringify($d);
 	$cb(main);
 };
 
-const back ($d, $cb) => {
+const back = ($d, $cb) => {
 	$cb(main);
 };
 
