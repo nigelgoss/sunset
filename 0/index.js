@@ -1,10 +1,14 @@
 const $ = {};
 (function () {
 
-	HTMLElement.prototype.ngpointerdown = ($ele) => {
-		if ($ele.onpointerdown !== "function") return;
-		$ele.onpointerdown();
-	};
+	new MutationObserver(function ($mutationsList) {
+		$mutationsList.forEach(function ($x) {
+			$x.addedNodes.forEach(function ($y) {
+				if (typeof $y.ngpointerdown !== "function") return;
+				$y.ngpointerdown = $y.onpointerdown;
+			});
+		});
+	}).observe(document.body, { attributes:true, childList:true });
   
   $.pages = {};
   
