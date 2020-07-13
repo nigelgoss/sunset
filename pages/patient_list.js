@@ -47,7 +47,7 @@ const main = document.createElement("main");
 		
 button = document.createElement("button"); main.appendChild(button);
 button.textContent = "Episode";
-button.onpointerdown = function () {
+button.ngpointerdown = function () {
 	$.nav.goTo("Episode Update", {"EPN":1, "Episode":1});
 };
 
