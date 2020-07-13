@@ -44,7 +44,7 @@ buttonBack.ngpointerdown = () => { $.nav.back(); };
 const title = document.createElement("div"); header.appendChild(title);
 title.ngstyle = { flex: "1 1 auto", };
 
-let div = document.createElement("div"); header.appendChild(div);
+div = document.createElement("div"); header.appendChild(div);
 div.ngstyle = { flex: "1 1 auto", };
 
 buttonAdmin = document.createElement("button"); div.appendChild(buttonAdmin);
