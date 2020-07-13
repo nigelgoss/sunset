@@ -1,31 +1,32 @@
 const $ = {};
 (function () {
 
-	let throttleDate = new Date(0);
+	let throttle = { "date": new Date(0), "ele": null };
 	Object.defineProperties(HTMLElement.prototype, {
 		
 		"ngpointerdown": {
 			"set": function ($d) {
-				if (this.ng === undefined) this.ng = {}; 
+				if (this._ngX === undefined) this._ngX = {}; 
 				if (this.onpointerdown === null) this.onpointerdown = () => {
-					if (new Date() - throttleDate < this.ng.ngthrottle ?? 500) return;
-					throttleDate = new Date();
-					this.ng.ngpointerdown();
+					if (throttle.ele === this && new Date() - throttle.date < (this.ngthrottle ?? 500)) return;
+					throttle = {"date": new Date(), "ele": this };
+					this._ngX.ngpointerdown();
 				};
-				this.ng.ngpointerdown = $d;
+				if (this.ontouchstart === null) this.ontouchstart = () => {}; // iOS
+				this._ngX.ngpointerdown = $d;
 			},
 			"get": function () {
-				return this?.ng?.ngpointerdown;
+				return this?._ngX?.ngpointerdown;
 			},
 		},
 					
 		"ngthrottle": {
 			"set": function ($d) {
-				if (this.ng === undefined) this.ng = {}; 
-				this.ng.ngthrottle = $d;	
+				if (this._ngX === undefined) this._ngX = {}; 
+				this._ngX.ngthrottle = $d;
 			},	
 			"get": function () {
-				return this?.ng?.ngthrottle;
+				return this?._ngX?.ngthrottle;
 			},
 		},
 		
