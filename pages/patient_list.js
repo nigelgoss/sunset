@@ -97,6 +97,11 @@ const build = () => {
 			span.className = "faS";
 			span.textContent = "";
 		
+		tr = document.createElement("tr"); tbody.appendChild(tr);
+		td = document.createElement("td"); tr.appendChild(td);
+		td.colSpan = "5";
+		td.textContent = $v.Notes;
+		
 	});
 
 };
