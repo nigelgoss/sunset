@@ -2,7 +2,7 @@ $.nav = (() => {
 
 const history = [];
 
-const goTo ($page, $input) => {
+const goTo = ($page, $input) => {
 	if ($page === history.slice(-1)[0]?.page) return; 
 	$.pages[$page].forwards($input, function ($ele) {
 		history.push({"page":$page, "input":$input});
@@ -10,7 +10,7 @@ const goTo ($page, $input) => {
 	});
 };
 
-const back ($refresh) => {
+const back = ($refresh) => {
 	if (history.length <= 2) return;
 	history.pop();
 	let d = history.slice(-1)[0];
@@ -19,7 +19,7 @@ const back ($refresh) => {
 	});
 };
 
-const updateViewport ($ele) => {
+const updateViewport = ($ele) => {
 	let main = document.body.querySelector("main");
 	main.parentNode.replaceChild($ele, main);
 	title.textContent = history.slice(-1)[0].page;
