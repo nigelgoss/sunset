@@ -31,6 +31,12 @@ Object.defineProperties(HTMLElement.prototype, {
 			return this?._ngX?.throttle;
 		},
 	},
+				
+	"ngstyle": {
+		"set": function ($d) {
+			Object.keys($d).forEach(($v) => { this.style[$v] = $d[$v]; }); 
+		},
+	},
 
 });
 
