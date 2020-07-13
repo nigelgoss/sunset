@@ -4,7 +4,7 @@ const history = [];
 
 const goTo = ($page, $input) => {
 	if ($page === history.slice(-1)[0]?.page) return; 
-	$.pages[$page].forwards($input, function ($ele) {
+	$.pages[$page].forwards($input, ($ele) => {
 		history.push({"page":$page, "input":$input});
 		updateViewport($ele);
 	});
@@ -14,7 +14,7 @@ const back = ($refresh) => {
 	if (history.length <= 2) return;
 	history.pop();
 	let d = history.slice(-1)[0];
-	$.pages[d.page].forwards(d.input, function ($ele) {
+	$.pages[d.page].forwards(d.input, ($ele) => {
 		updateViewport($ele);
 	});
 };
@@ -27,19 +27,29 @@ const updateViewport = ($ele) => {
 };
   
 let header = document.createElement("header");
-header.style.backgroundColor = "lightblue";
-header.style.padding = "10px";
-header.style.textAlign = "center";
+header.ngstyle = {
+	backgroundColor: "lightblue",
+	padding: "10px",
+	textAlign: "center",
+	display: "flex",
+};
 
-const buttonBack = document.createElement("button"); header.appendChild(buttonBack);
+let div = document.createElement("div"); header.appendChild(div);
+div.ngstyle = { flex: "1 1 auto", };
+
+const buttonBack = document.createElement("button"); div.appendChild(buttonBack);
 buttonBack.textContent = "Back";
-buttonBack.ngpointerdown = function () { $.nav.back(); };
+buttonBack.ngpointerdown = () => { $.nav.back(); };
 
-const title = document.createElement("span"); header.appendChild(title);
+const title = document.createElement("div"); header.appendChild(title);
+title.ngstyle = { flex: "1 1 auto", };
 
-button = document.createElement("button"); header.appendChild(button);
-button.textContent = "Admin";
-button.ngpointerdown = function () { $.nav.goTo("Admin"); };
+let div = document.createElement("div"); header.appendChild(div);
+div.ngstyle = { flex: "1 1 auto", };
+
+buttonAdmin = document.createElement("button"); div.appendChild(buttonAdmin);
+buttonAdmin.textContent = "Admin";
+buttonAdmin.ngpointerdown = () => { $.nav.goTo("Admin"); };
 
 let oldHeader = document.body.querySelector("header");
 oldHeader.parentNode.replaceChild(header, oldHeader);
