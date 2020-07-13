@@ -79,7 +79,7 @@ const build = () => {
 			span.className = "faS";
 			span.textContent = "";
 		
-	};
+	});
 
 };
 
