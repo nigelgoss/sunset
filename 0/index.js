@@ -6,6 +6,7 @@ Object.defineProperties(HTMLElement.prototype, {
 
 	"ngpointerdown": {
 		"set": function ($d) {
+			this.style.cursor = "pointer";
 			if (this._ngX === undefined) this._ngX = {}; 
 			if (this.onpointerdown === null) this.onpointerdown = () => {
 				if (throttle.ele === this && new Date() - throttle.date < (this.ngthrottle ?? 500)) return;
