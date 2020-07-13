@@ -5,8 +5,8 @@ const $ = {};
 	Object.defineProperties(HTMLElement.prototype, {
 		
 		"ngpointerdown": {
-			"set": ($d) => {
-				console.log(self, this);
+			"set": function ($d) {
+				console.log(Object, HTMLElement);
 				if (this.ng === undefined) this.ng = {}; 
 				if (this.onpointerdown === null) this.onpointerdown = () => {
 					if (new Date() - throttleDate < this.ng.ngthrottle ?? 500) return;
@@ -15,17 +15,17 @@ const $ = {};
 				};
 				this.ng.ngpointerdown = $d;
 			},
-			"get": () => {
+			"get": function () {
 				return this?.ng?.ngpointerdown;
 			},
 		},
 					
 		"ngthrottle": {
-			"set": ($d) => {
+			"set": function ($d) {
 				if (this.ng === undefined) this.ng = {}; 
 				this.ng.ngthrottle = $d;	
 			},	
-			"get": () => {
+			"get": function () {
 				return this?.ng?.ngthrottle;
 			},
 		},
