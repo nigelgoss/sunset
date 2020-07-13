@@ -10,7 +10,7 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
-main.ngstyle = { display: "flex", };
+main.ngstyle = { display: "flex", flexDirection: "column", flex: "1 1 100%", };
 
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
 patientBanner.ngstyle = {
