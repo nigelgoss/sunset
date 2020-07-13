@@ -1,20 +1,34 @@
 const $ = {};
 (function () {
 
-	let throttleTimer;
-	Object.defineProperty(HTMLElement.prototype, "ngpointerdown", {
-		"set": function ($d) {
-			if (this.onpointerdown === null) this.onpointerdown = () => {
-				if (throttleTimer !== undefined) return;
-				throttleTimer = setTimeout(() => { throttleTimer = undefined; }, 2000);
-				this.ng.ngpointerdown();
-			};
-			if (this.ng === undefined) this.ng = {}; 
-			this.ng.ngpointerdown = $d;
+	let throttleDate = new Date(0);
+	Object.defineProperties(HTMLElement.prototype, {
+		
+		"ngpointerdown": {
+			"set": ($d) => {
+				if (this.onpointerdown === null) this.onpointerdown = () => {
+					if (throttleDate - new Date() < this?.ng?.ngthrottle || 500) return;
+					throttleDate = new Date();
+					this.ng.ngpointerdown();
+				};
+				if (this.ng === undefined) this.ng = {}; 
+				this.ng.ngpointerdown = $d;
+			},
+			"get": () => {
+				return this?.ng?.ngpointerdown;
+			},
 		},
-		"get": function () {
-			return this?.ng?.ngpointerdown;
+					
+		"ngthrottle" {
+			"set": ($d) => {
+				if (this.ng === undefined) this.ng = {}; 
+				this.ng.ngthrottle = $d;	
+			},	
+			"get": () => {
+				return this?.ng?.ngthrottle;
+			},
 		},
+		
 	});
   
   $.pages = {};
