@@ -6,7 +6,6 @@ const $ = {};
 		
 		"ngpointerdown": {
 			"set": function ($d) {
-				console.log(Object, HTMLElement);
 				if (this.ng === undefined) this.ng = {}; 
 				if (this.onpointerdown === null) this.onpointerdown = () => {
 					if (new Date() - throttleDate < this.ng.ngthrottle ?? 500) return;
