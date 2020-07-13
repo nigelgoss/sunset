@@ -3,7 +3,7 @@ const $ = {};
 
 	Object.defineProperty(HTMLElement.prototype, "ngpointerdown", {
 		"set": function ($d) {
-			if (this.onpointerdown === null) this.onpointerdown = this.ng.ngpointerdown;
+			if (this.onpointerdown === null) this.onpointerdown = () => { this.ng.ngpointerdown(); };
 			if (this.ng === undefined) this.ng = {}; 
 			this.ng.ngpointerdown = $d;
 		},
