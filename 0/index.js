@@ -4,6 +4,7 @@ const $ = {};
 	new MutationObserver(function ($mutationsList) {
 		$mutationsList.forEach(function ($x) {
 			$x.addedNodes.forEach(function ($y) {
+				console.log($y);
 				if (typeof $y.ngpointerdown !== "function") return;
 				$y.onpointerdown = $y.ngpointerdown;
 			});
