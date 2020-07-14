@@ -53,9 +53,25 @@ title.ngstyle = {
 div = document.createElement("div"); header.appendChild(div);
 div.ngstyle = { flex: "0 0 auto", };
 
-buttonAdmin = document.createElement("button"); div.appendChild(buttonAdmin);
-buttonAdmin.textContent = "Admin";
-buttonAdmin.ngpointerdown = () => { $.nav.goTo("Admin"); };
+let button = document.createElement("button"); div.appendChild(button);
+button.className = "faS";
+button.textContent = "";
+button.ngpointerdown = () => { location.reload(true); };
+
+button = document.createElement("button"); div.appendChild(button);
+button.className = "faS";
+button.textContent = ""; 
+button.ngpointerdown = () => { $.nav.goTo("Admin"); };
+
+button = document.createElement("button"); div.appendChild(button);
+button.className = "faS";
+button.textContent = "";
+button.ngpointerdown = () => { $.nav.goTo("Admin"); };
+
+button = document.createElement("button"); div.appendChild(button);
+button.className = "faS";
+button.textContent = "";
+button.ngpointerdown = () => { $.nav.goTo("Admin"); };
 
 let oldHeader = document.body.querySelector("header");
 oldHeader.parentNode.replaceChild(header, oldHeader);
