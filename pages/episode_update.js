@@ -52,7 +52,7 @@ const build = () => {
 	
 	$d[1].forEach(($v) => {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
-		button.textContent = $v;
+		button.textContent = $v.Episode;
 		button.ngpointerdown = () => {};
 	});
 	
