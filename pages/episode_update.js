@@ -58,6 +58,7 @@ const build = () => {
 	});
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
+	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 	button.textContent = "+";
 	
 };
