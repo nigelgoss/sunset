@@ -107,7 +107,7 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1
 	$v[1].forEach(($v2) => {
 		let label = document.createElement("label"); div.appendChild(label); label.textContent = $v2[0];
 		let ele = $v2[1]();
-		ele.name = $v[0] + $v2[0];
+		ele.name = ($v[0] + "|" + $v2[0]).replace(/\W/g, "_");
 		div.appendChild(ele);
 	});
 });
