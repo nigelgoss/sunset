@@ -10,7 +10,7 @@ const alert = ($msg) => {
 
 const serialise = ($ele = document.body) => {
 	const d = {};
-	$ele.querySelectorAll("*[name]").forEach(function ($v) {
+	$ele.querySelectorAll("*[name]").forEach(($v) => {
 		if (d[$v.name] === undefined) d[$v.name] = ($v.type === "checkbox") ? [] : null;
 		if (["checkbox", "radio"].indexOf($v.type) > -1 && $v.checked === false) return;
 		let value = ($v.value === "") ? null : $v.value;
@@ -19,9 +19,9 @@ const serialise = ($ele = document.body) => {
 	return d;
 };
 	
-const deserialise = function ($ele, $d) {
-	Object.keys($d).forEach(function ($v) {
-		$ele.querySelectorAll("[name='"+$v+"']").forEach(function ($v2) {
+const deserialise = ($ele, $d) => {
+	Object.keys($d).forEach(($v) => {
+		$ele.querySelectorAll("[name='"+$v+"']").forEach(($v2) => {
 			if (["checkbox", "radio"].indexOf($v2.type) > -1) {
 				$v2.checked = ($v2.value === $d[$v]) ? true : false;
 			} else {
