@@ -119,7 +119,10 @@ let span = document.createElement("span"); button.appendChild(span);
 span.className = "faS";
 span.textContent = "";
 button.appendChild(document.createTextNode(" Save"));
-button.ngpointerdown = () => {};
+button.ngpointerdown = () => {
+	console.log($.ngX.serialise(main));
+	$.ngX.clear();
+};
 	
 const build = ($d) => {
 	
