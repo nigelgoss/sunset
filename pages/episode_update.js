@@ -24,7 +24,7 @@ main.ngstyle = { display: "flex", flexDirection: "column", flex: "1 1 100%", };
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
-	"main filedset * { padding:2px; }",
+	"main fieldset * { padding:2px; }",
 ].join("\n");	
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
 patientBanner.ngstyle = {
