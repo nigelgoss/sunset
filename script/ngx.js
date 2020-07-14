@@ -23,7 +23,7 @@ const deserialise = function ($d) {
 	console.log("D", $d);
 	Object.keys($d).forEach(function ($v) {
 		console.log("V", $v);
-		console.log("V-", document.body.querySelectorAll("[name='"+$v+"']").length);
+		console.log("V-", document.querySelectorAll("[name='"+$v+"']"));
 		document.querySelectorAll("[name='"+$v+"']").forEach(function ($v2) {
 			console.log("V2", $v2);
 			if (["checkbox", "radio"].indexOf($v2.type) > -1) {
