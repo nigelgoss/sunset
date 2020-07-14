@@ -33,9 +33,35 @@ patientBanner.ngstyle = {
 const episodeBanner = document.createElement("div"); main.appendChild(episodeBanner);
 episodeBanner.ngstyle = { flex: "0 0 auto", };
 	
-let div = document.createElement("div"); main.appendChild(div);
-div.ngstyle = { flex: "1 1 auto", };
+let divInput = document.createElement("div"); main.appendChild(divInput);
+divInput.ngstyle = { flex:"1 1 auto", display:"grid", };
 
+[
+	["Body Registration", [
+	 	["Fridge tray no.", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+	 	["Religion", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Size", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Infection status", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Condition of body", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["PM required", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Pacemaker", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+	]]
+].forEach(($v) => {
+	let fieldset = document.createElement("fieldset"); divInput.appendChild(fieldset);
+	let legend = document.createElement("legend"); fieldset.appendChild(legend); legend.textContent = $v[0];
+	let div = document.createElement("div"); fieldset.appendChild(div);
+	$v[1].forEach(($v2) => {
+		let label = document.createElement("label"); div.appendChild(label); label.textContent = $v2[0];
+		div.appendChild($v2[1]());
+	});
+});
+	
+
+
+	
+	
+	
+	
 let button = document.createElement("button"); main.appendChild(button);
 button.ngstyle = { flex: "0 0 auto", width: "100%", backgroundColor: "#007f3b", color: "#ffffff", };
 let span = document.createElement("span"); button.appendChild(span);
@@ -73,20 +99,8 @@ return {
 	
 /*
 
-<section>
 
-<fieldset>
-	<legend>Body Registration</legend>
-	<div>
-		<label>Fridge tray no.</label><input type="text">
-		<label>Religion</label><input type="text">
-		<label>Size</label><input type="text">
-		<label>Infection status</label><input type="text">
-		<label>Condition of body</label><input type="text">
-		<label>PM required</label><input type="text">
-		<label>Pacemaker</label><input type="text">
-	</div>
-</fieldset>
+
 
 <fieldset>
 	<legend>Property</legend>
