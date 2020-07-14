@@ -1,5 +1,15 @@
 $.pages["Episode Update"] = (() => {
 
+const $d = [
+	[
+		{"EPN":1, "Name":"SIMTH, John (Mr)"},
+	],[
+		{"Episode":1},
+		{"Episode":2},
+		{"Episode":3},
+	],
+];
+	
 const load = ($d, $cb) => {
 	build();
 	$cb(main);
@@ -19,9 +29,6 @@ patientBanner.ngstyle = {
 	height: "70px",
 	flex: "0 0 auto",
 };
-patientBanner.textContent = "PATIENT BANNER";
-
-const $d = ["3", "2", "1"];
 
 const episodeBanner = document.createElement("div"); main.appendChild(episodeBanner);
 episodeBanner.ngstyle = { flex: "0 0 auto", };
@@ -39,9 +46,11 @@ button.ngpointerdown = () => {};
 	
 const build = () => {
 	
+	patientBanner.textContent = JSON.stringify($d[0][0]);
+	
 	episodeBanner.textContent = "Episode: ";
 	
-	$d.forEach(($v) => {		
+	$d[1].forEach(($v) => {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
 		button.textContent = $v;
 		button.ngpointerdown = () => {};
