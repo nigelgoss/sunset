@@ -45,6 +45,7 @@ $.pages = {};
 [
 	"pages/sign_in.js",
 	"script/nav.js",
+	"script/ngx.js",
 	"pages/patient_list.js",
 	"pages/episode_update.js",
 	"pages/admin.js",
