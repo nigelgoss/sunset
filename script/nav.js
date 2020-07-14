@@ -54,24 +54,28 @@ div = document.createElement("div"); header.appendChild(div);
 div.ngstyle = { flex: "0 0 auto", };
 
 let button = document.createElement("button"); div.appendChild(button);
+button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 button.className = "faS";
-button.textContent = "";
+button.textContent = "";
 button.ngpointerdown = () => { location.reload(true); };
 
 button = document.createElement("button"); div.appendChild(button);
+button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 button.className = "faS";
 button.textContent = ""; 
 button.ngpointerdown = () => { $.nav.goTo("Admin"); };
 
 button = document.createElement("button"); div.appendChild(button);
+button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 button.className = "faS";
-button.textContent = "";
-button.ngpointerdown = () => { $.nav.goTo("Admin"); };
+button.textContent = "";
+button.ngpointerdown = () => { $.ngX.open("https://www.google.com/"); };
 
 button = document.createElement("button"); div.appendChild(button);
+button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 button.className = "faS";
-button.textContent = "";
-button.ngpointerdown = () => { $.nav.goTo("Admin"); };
+button.textContent = "";
+button.ngpointerdown = () => { $.nav.back("Patient List"); };
 
 let oldHeader = document.body.querySelector("header");
 oldHeader.parentNode.replaceChild(header, oldHeader);
