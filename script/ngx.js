@@ -20,9 +20,11 @@ const serialise = ($ele = document.body) => {
 };
 	
 const deserialise = function ($d) {
+	console.log("D", $d);
 	Object.keys($d).forEach(function ($v) {
+		console.log("V", $v);
 		document.body.querySelectorAll("[name='"+$v+"']").forEach(function ($v2) {
-			console.log($v, $v2, $d[$v]);
+			console.log("V2", $v2);
 			if (["checkbox", "radio"].indexOf($v2.type) > -1) {
 				$v2.checked = ($v2.value === $d[$v]) ? true : false;
 			} else {
