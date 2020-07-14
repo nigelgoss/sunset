@@ -11,7 +11,7 @@ const $d = [
 ];
 	
 const load = ($d, $cb) => {
-	build();
+	build($d);
 	$cb(main);
 };
 
@@ -120,7 +120,7 @@ span.textContent = "";
 button.appendChild(document.createTextNode(" Save"));
 button.ngpointerdown = () => {};
 	
-const build = () => {
+const build = ($d) => {
 	
 	patientBanner.textContent = JSON.stringify($d[0][0]);
 	
