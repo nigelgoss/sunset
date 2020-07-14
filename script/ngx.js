@@ -19,13 +19,9 @@ const serialise = ($ele = document.body) => {
 	return d;
 };
 	
-const deserialise = function ($d) {
-	console.log("D", $d);
+const deserialise = function ($ele, $d) {
 	Object.keys($d).forEach(function ($v) {
-		console.log("V", $v);
-		console.log("V-", document.querySelectorAll("[name='"+$v+"']"));
-		document.querySelectorAll("[name='"+$v+"']").forEach(function ($v2) {
-			console.log("V2", $v2);
+		$ele.querySelectorAll("[name='"+$v+"']").forEach(function ($v2) {
 			if (["checkbox", "radio"].indexOf($v2.type) > -1) {
 				$v2.checked = ($v2.value === $d[$v]) ? true : false;
 			} else {
