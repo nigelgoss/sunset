@@ -10,7 +10,7 @@ const alert = ($msg) => {
 
 const serialise = ($ele = document.body) => {
 	const d = {};
-	$ele.querySelectorAll("*[name]").forEach(($v) => {
+	$ele.querySelectorAll("*[name]").forEach(function ($v) {
 		if (d[$v.name] === undefined) d[$v.name] = ($v.type === "checkbox") ? [] : null;
 		if (["checkbox", "radio"].indexOf($v.type) > -1 && $v.checked === false) return;
 		let value = ($v.value === "") ? null : $v.value;
