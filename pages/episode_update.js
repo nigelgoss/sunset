@@ -49,6 +49,52 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1
 		["Condition of body", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
 		["PM required", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
 		["Pacemaker", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+	]],
+	["Property", [
+	 	["Details", () => { let input = document.createElement("textarea"); return input; }],
+	 	["Transferred to", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Date", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+	]],
+	["Valuables", [
+	 	["Details", () => { let input = document.createElement("textarea"); return input; }],
+	 	["Transferred to", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Date", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+	]],
+	["Clothing", [
+	 	["Details", () => { let input = document.createElement("textarea"); return input; }],
+	 	["Transferred to", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Date", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+	]],
+	["Babies", [
+	 	["Mothers name", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Mothers hospital no.", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Baby named", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Delivery date", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+		["Gestation", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+	]],
+	["Funeral Arrangements", [
+	 	["Parents arranging", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Cremation / Burial", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Midwife / Nurse name", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+	]],
+	["Offsite PM Details", [
+	 	["Destination", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Date sent", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+		["Date returned", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+	]],
+	["Body Release", [
+	 	["Funeral director", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Persons releasing body", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Type of release", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Disposal certificate no.", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Condition of body form given", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Date", () => { let input = document.createElement("input"); input.type = "date"; return input; }],
+		["Out of hours release", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Hospital arranged funderal", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+		["Infection form given", () => { let input = document.createElement("input"); input.type = "text"; return input; }],
+	]],
+	["Notes", [
+	 	["Notes", () => { let input = document.createElement("textarea"); return input; }],
 	]]
 ].forEach(($v) => {
 	let fieldset = document.createElement("fieldset"); divInput.appendChild(fieldset);
@@ -97,96 +143,3 @@ return {
 };
 
 })();
-	
-	
-/*
-
-
-
-
-<fieldset>
-	<legend>Property</legend>
-	<div>
-		<label>Details</label><textarea></textarea>
-		<label>Transferred to</label><input type="text">
-		<label>Date</label><input type="date">
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Valuables</legend>
-	<div>
-		<label>Details</label><textarea></textarea>
-		<label>Transferred to</label><input type="text">
-		<label>Date</label><input type="date">
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Clothing</legend>
-	<div>
-		<label>Details</label><textarea></textarea>
-		<label>Transferred to</label><input type="text">
-		<label>Date</label><input type="date">
-		
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Babies</legend>
-	<div>
-		<label>Mothers name</label><input type="text">
-		<label>Mothers hospital no.</label><input type="text">
-		<label>Baby named</label><input type="text">
-		<label>Delivery date</label><input type="date">
-		<label>Gestation</label><input type="text">
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Funeral Arrangements</legend>
-	<div>
-		<label>Parents arranging</label><input type="text">
-		<label>Cremation / Burial</label><input type="text">
-		<label>Midwife / Nurse name</label><input type="text">
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Offsite PM Details</legend>
-	<div>
-		<label>Destination</label><input type="text">
-		<label>Date sent</label><input type="date">
-		<label>Date returned</label><input type="date">
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Body Release</legend>
-	<div>
-		<label>Funeral director</label><input type="text">
-		<label>Persons releasing body</label><input type="text">
-		<label>Type of release</label><input type="text">
-		<label>Disposal certificate no.</label><input type="text">
-		<label>Condition of body form given</label><input type="text">
-		<label>Date</label><input type="date">
-		<label>Out of hours release</label><input type="text">
-		<label>Hospital arranged funderal</label><input type="text">
-		<label>Infection form given</label><input type="text">
-	</div>
-</fieldset>
-
-<fieldset>
-	<legend>Notes</legend>
-	<div>
-		<label>Notes</label><textarea></textarea>
-	</div>
-</fieldset>
-
-</section>
-
-<button style="width:100%; background-color:#007f3b; color:#ffffff;" onclick="swap();"><span class="faR"></span> Save</button>
-
-</main>
-
-*/
