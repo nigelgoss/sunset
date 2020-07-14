@@ -34,7 +34,7 @@ const episodeBanner = document.createElement("div"); main.appendChild(episodeBan
 episodeBanner.ngstyle = { flex: "0 0 auto", };
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = { flex:"1 1 auto", display:"grid", };
+divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1fr 1fr", };
 
 [
 	["Body Registration", [
@@ -48,20 +48,18 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", };
 	]]
 ].forEach(($v) => {
 	let fieldset = document.createElement("fieldset"); divInput.appendChild(fieldset);
-	let legend = document.createElement("legend"); fieldset.appendChild(legend); legend.textContent = $v[0];
+	fieldset.ngstyle = { backgroundColor:"#eeeeee", margin:"5px", border:"2px solid grey", borderRadius:"10px", };
+	let legend = document.createElement("legend"); fieldset.appendChild(legend);
+	legend.ngstyle = { fontSize:"1.2em", fontWeight:"bold", border:"2px solid grey", borderRadius:"10px", backgroundColor:"#FAE100", };
+	legend.textContent = $v[0];
 	let div = document.createElement("div"); fieldset.appendChild(div);
+	div.ngstyle = { display:"grid", gridTemplateColumns:"auto 1fr", gridGap:"5px", };
 	$v[1].forEach(($v2) => {
 		let label = document.createElement("label"); div.appendChild(label); label.textContent = $v2[0];
 		div.appendChild($v2[1]());
 	});
 });
-	
 
-
-	
-	
-	
-	
 let button = document.createElement("button"); main.appendChild(button);
 button.ngstyle = { flex: "0 0 auto", width: "100%", backgroundColor: "#007f3b", color: "#ffffff", };
 let span = document.createElement("span"); button.appendChild(span);
