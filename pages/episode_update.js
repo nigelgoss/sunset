@@ -1,6 +1,6 @@
-$.pages["Episode Update"] = (function () {
+$.pages["Episode Update"] = (() => {
 	
-const load = function ($d, $cb) {
+const load = ($d, $cb) => {
 	
 	const $x = [
 		[
@@ -16,7 +16,7 @@ const load = function ($d, $cb) {
 	$cb(main);
 };
 
-const back = function ($d, $cb) {
+const back = ($d, $cb) => {
 	$cb(main);
 };
 
@@ -119,28 +119,26 @@ let span = document.createElement("span"); button.appendChild(span);
 span.className = "faS";
 span.textContent = "";
 button.appendChild(document.createTextNode(" Save"));
-button.ngpointerdown = function () {};
+button.ngpointerdown = () => {};
 	
-const build = function ($d) {
-	
-	$.ngX.deserialise(main, $d[1][0]);
+const build = ($d) => {
 	
 	patientBanner.textContent = JSON.stringify($d[0][0]);
 	
 	episodeBanner.textContent = "Episode: ";
 	
-	$d[1].forEach(function ($v) {		
+	$d[1].forEach(($v) => {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
 		button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 		button.textContent = $v.Episode;
-		button.ngpointerdown = function () {};
+		button.ngpointerdown = () => {};
 	});
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
 	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 	button.textContent = "+";
 	
-	//
+	$.ngX.deserialise(main, $d[1][0]);
 	
 };
 	
