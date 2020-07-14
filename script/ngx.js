@@ -8,7 +8,7 @@ const alert = ($msg) => {
 	window.alert($msg);
 };
 
-const ngserialise = ($ele = document.body) => {
+const serialise = ($ele = document.body) => {
 	const d = {};
 	$ele.querySelectorAll("*[name]").forEach(($v) => {
 		if (d[$v.name] === undefined) d[$v.name] = ($v.type === "checkbox") ? [] : null;
@@ -18,11 +18,24 @@ const ngserialise = ($ele = document.body) => {
 	});
 	return d;
 };
+	
+const deserialise = ($d) => {
+	Object.keys($d).forEach(($v) => {
+		document.body.querySelectorAll("*[name='"+$v+"']").forEach(($v2) => {
+			if (["checkbox", "radio"].indexOf($v2.type) > -1) {
+				$v2.checked = ($v2.value === $d[$v]) ? true : false;
+			} else {
+				$v2.value = $d[$v];
+			};
+		});
+	});
+};
 
 return {
-	"open": open,
-	"alert": alert,
-	"ngserialise": ngserialise,
+	open: open,
+	alert: alert,
+	serialise: serialise,
+	deserialise: deserialise,
 };
   
 })();
