@@ -1,5 +1,5 @@
-@font-face { font-family:FARegular; src:url('../resources/fa-regular-400.woff2') format('woff2'); } .faR { font-family:FARegular; }
-@font-face { font-family:FASolid; src:url('../resources/fa-solid-900.woff2') format('woff2'); } .faS { font-family:FASolid; }
+@font-face { font-family:FARegular; src:url('../resources/fa-regular-400.woff2') format('woff2'); } .faR { font-family:FARegular; font-size:1.3em; }
+@font-face { font-family:FASolid; src:url('../resources/fa-solid-900.woff2') format('woff2'); } .faS { font-family:FASolid; font-size:1.3em; }
 
 * { font-family:Arial; }
 button { padding:10px; }
