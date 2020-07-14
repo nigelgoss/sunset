@@ -108,7 +108,7 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1
 		let label = document.createElement("label"); div.appendChild(label); label.textContent = $v2[0];
 		let ele = $v2[1]();
 		ele.name = $v[0] + $v2[0];
-		div.appendChild();
+		div.appendChild(ele);
 	});
 });
 
