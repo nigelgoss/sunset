@@ -123,7 +123,7 @@ button.ngpointerdown = function () {};
 	
 const build = function ($d) {
 	
-	$.ngX.deserialise($d[1][0]);
+	$.ngX.deserialise(main, $d[1][0]);
 	
 	patientBanner.textContent = JSON.stringify($d[0][0]);
 	
