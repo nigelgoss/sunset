@@ -30,12 +30,23 @@ const deserialise = ($ele, $d) => {
 		});
 	});
 };
+	
+const clear = ($ele = document.body) => {
+	$ele.querySelectorAll("[name]").forEach(($v) => {
+		if (["checkbox", "radio"].indexOf($v.type) >  -1) {
+			$v.checked = false;
+		} else {
+			$v.value = "";
+		};
+	});
+};
 
 return {
 	open: open,
 	alert: alert,
 	serialise: serialise,
 	deserialise: deserialise,
+	clear: clear,
 };
   
 })();
