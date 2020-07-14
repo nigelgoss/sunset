@@ -1,4 +1,4 @@
-$.pages["Episode Update"] = (() => {
+$.pages["Episode Update"] = (function () {
 	
 const load = function ($d, $cb) {
 	
@@ -16,7 +16,7 @@ const load = function ($d, $cb) {
 	$cb(main);
 };
 
-const back = ($d, $cb) => {
+const back = function ($d, $cb) {
 	$cb(main);
 };
 
@@ -119,9 +119,11 @@ let span = document.createElement("span"); button.appendChild(span);
 span.className = "faS";
 span.textContent = "";
 button.appendChild(document.createTextNode(" Save"));
-button.ngpointerdown = () => {};
+button.ngpointerdown = function () {};
 	
 const build = function ($d) {
+	
+	$.ngX.deserialise($d[1][0]);
 	
 	patientBanner.textContent = JSON.stringify($d[0][0]);
 	
@@ -138,7 +140,7 @@ const build = function ($d) {
 	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 	button.textContent = "+";
 	
-	$.ngX.deserialise($d[1][0]);
+	//
 	
 };
 	
