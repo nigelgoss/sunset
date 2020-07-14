@@ -1,6 +1,6 @@
 $.pages["Episode Update"] = (() => {
 	
-const load = ($d, $cb) => {
+const load = function ($d, $cb) {
 	
 	const $x = [
 		[
@@ -121,17 +121,17 @@ span.textContent = "";
 button.appendChild(document.createTextNode(" Save"));
 button.ngpointerdown = () => {};
 	
-const build = ($d) => {
+const build = function ($d) {
 	
 	patientBanner.textContent = JSON.stringify($d[0][0]);
 	
 	episodeBanner.textContent = "Episode: ";
 	
-	$d[1].forEach(($v) => {		
+	$d[1].forEach(function ($v) {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
 		button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 		button.textContent = $v.Episode;
-		button.ngpointerdown = () => {};
+		button.ngpointerdown = function () {};
 	});
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
