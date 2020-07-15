@@ -33,30 +33,36 @@ thead.ngstyle = {
 };
 
 let tr = document.createElement("tr"); thead.appendChild(tr);
-
 let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
 td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
 td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
 td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
 td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";
-				
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";			
 td = document.createElement("td"); tr.appendChild(td);
-td.ngstyle = {
-	width: "1px",
-	textAlign: "right",
-};
+td.ngstyle = { width:"1px", textAlign:"right", };
 				
-let button = document.createElement("button"); td.appendChild(button);
-button.ngstyle = {
-	backgroundColor: "#007f3b",
-	color: "#ffffff",
-	borderRadius: "999px",
-};
-button.ngpointerdown = () => {};
-	let span = document.createElement("span"); button.appendChild(span);
-	span.className = "faS";
-	span.textContent = "";
+	let button = document.createElement("button"); td.appendChild(button);
+	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
+	button.className = "faS";
+	button.textContent = "";
+	button.ngpointerdown = () => {};
+
+tr = document.createElement("tr"); thead.appendChild(tr);
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
+td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";			
+td = document.createElement("td"); tr.appendChild(td);
+td.ngstyle = { width:"1px", textAlign:"right", };
+				
+	button = document.createElement("button"); td.appendChild(button);
+	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
+	button.className = "faS";
+	button.textContent = "";
+	button.ngpointerdown = () => {};
 
 const build = () => {
 
