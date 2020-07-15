@@ -46,22 +46,25 @@ td.ngstyle = { width:"1px", textAlign:"right", };
 	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 	button.className = "faS";
 	button.textContent = "";
-	button.ngpointerdown = () => {};
+	button.ngpointerdown = () => {
+		trSearch.style.display = (trSearch.style.display === "none") ? "table-row" : "none";
+	};
 
-tr = document.createElement("tr"); thead.appendChild(tr);
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "NHS No.";
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "Hospital No.";
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "Birth";
-td = document.createElement("td"); tr.appendChild(td); td.textContent = "Death";			
-td = document.createElement("td"); tr.appendChild(td);
+const trSearch = document.createElement("tr"); thead.appendChild(trSearch);
+trSearch.ngstyle = { display:"none", };
+td = document.createElement("td"); trSearch.appendChild(td); td.textContent = "Location";
+td = document.createElement("td"); trSearch.appendChild(td); td.textContent = "Name";
+td = document.createElement("td"); trSearch.appendChild(td); td.textContent = "NHS No.";
+td = document.createElement("td"); trSearch.appendChild(td); td.textContent = "Hospital No.";
+td = document.createElement("td"); trSearch.appendChild(td); td.textContent = "Birth";
+td = document.createElement("td"); trSearch.appendChild(td); td.textContent = "Death";			
+td = document.createElement("td"); trSearch.appendChild(td);
 td.ngstyle = { width:"1px", textAlign:"right", };
 				
 	button = document.createElement("button"); td.appendChild(button);
 	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
 	button.className = "faS";
-	button.textContent = "";
+	button.textContent = "";
 	button.ngpointerdown = () => {};
 
 const build = () => {
