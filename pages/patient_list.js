@@ -19,18 +19,10 @@ style.textContent = [
 ].join("\n");
 
 let table = document.createElement("table"); main.appendChild(table);
-table.ngstyle = {
-	width: "100%",
-	borderCollapse: "collapse",
-};
+table.ngstyle = { width:"100%", borderCollapse:"collapse", };
 
 let thead = document.createElement("thead"); table.appendChild(thead);
-thead.ngstyle = {
-	fontWeight: "bold",
-	backgroundColor: "lightgrey",
-	border: "0 solid white",
-	borderWidth: "2px 0 2px 0",
-};
+thead.ngstyle = { fontWeight:"bold", backgroundColor:"lightgrey", border:"0 solid white", borderWidth:"2px 0 2px 0", };
 
 let tr = document.createElement("tr"); thead.appendChild(tr);
 let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
