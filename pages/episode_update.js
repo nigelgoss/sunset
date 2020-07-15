@@ -1,3 +1,4 @@
+"use strict";
 $.pages["Episode Update"] = (() => {
 	
 const load = ($d, $cb) => {
