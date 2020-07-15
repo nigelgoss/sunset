@@ -2,8 +2,12 @@
 $.pages["Patient List"] = (() => {
 
 const load = ($d, $cb) => {
-	build();
-	$cb(main);
+	
+	$.db.query("patient_list", {}, ($d) = {
+		build($d);
+		$cb(main);
+	});
+	
 };
 
 const back = ($d, $cb) => {
