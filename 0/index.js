@@ -1,6 +1,10 @@
-const $ = {};
+"use strict";
 (() => {
 
+window.$ = {
+	"pages": {},
+};
+	
 const throttle = {};
 Object.defineProperties(HTMLElement.prototype, {
 
@@ -39,8 +43,6 @@ Object.defineProperties(HTMLElement.prototype, {
 	},
 
 });
-
-$.pages = {};
 
 [
 	"pages/sign_in.js",
