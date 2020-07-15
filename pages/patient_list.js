@@ -3,7 +3,7 @@ $.pages["Patient List"] = (() => {
 
 const load = ($in, $cb) => {
 	
-	$.db.query("patient_list", {}, ($d) = {
+	$.db.query("patient_list", {}, ($d) => {
 		build($d);
 		$cb(main);
 	});
