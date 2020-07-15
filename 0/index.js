@@ -45,6 +45,18 @@ Object.defineProperties(HTMLElement.prototype, {
 });
 
 [
+	"resources/fa-regular-400.woff2",
+	"resources/fa-solid-900.woff2"
+].forEach(($v) => {
+	let link = document.createElement("link"); document.head.appendChild(link);
+	link.rel = "preload";
+	link.as = "font";
+	link.type = "font/woff2";
+	link.crossOrigin = true;
+	link.href = $v;
+});
+			
+[
 	"pages/sign_in.js",
 	"script/nav.js",
 	"script/db.js",
@@ -60,3 +72,4 @@ Object.defineProperties(HTMLElement.prototype, {
 window.onload = () => { $.nav.goTo("Sign In"); };
 
 })();
+ 
