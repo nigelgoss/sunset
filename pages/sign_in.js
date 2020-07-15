@@ -1,3 +1,4 @@
+"use strict";
 $.pages["Sign In"] = (() => {
 
 const load = ($d, $cb) => {
