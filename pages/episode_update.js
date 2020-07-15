@@ -139,7 +139,9 @@ const build = ($d) => {
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
 	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
-	button.textContent = "+";
+	button.className = "faS";
+	button.textContent = "";
+	button.ngpointerdown = () => { $.ngX.clear(); };
 	
 	$.ngX.deserialise(main, $d[1][0]);
 	
