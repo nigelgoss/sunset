@@ -1,8 +1,10 @@
+"use strict";
 $.pages["Patient List"] = (() => {
 
 const load = ($d, $cb) => {
 	build();
 	$cb(main);
+	mistypeVariable = 99;
 };
 
 const back = ($d, $cb) => {
