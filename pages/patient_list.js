@@ -66,10 +66,10 @@ input = document.createElement("input"); td.appendChild(input);
 input.type = "text"; 
 td = document.createElement("td"); trSearch.appendChild(td);
 input = document.createElement("input"); td.appendChild(input);
-input.type = "text"; 
+input.type = "date"; 
 td = document.createElement("td"); trSearch.appendChild(td);
 input = document.createElement("input"); td.appendChild(input);
-input.type = "text"; 
+input.type = "date"; 
 td = document.createElement("td"); trSearch.appendChild(td);
 td.ngstyle = { width:"1px", textAlign:"right", };
 				
