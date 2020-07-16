@@ -5,7 +5,10 @@ const history = [];
 const goTo = ($page, $input) => {
 	if ($page === history.slice(-1)[0]?.page) return; //Can't go to the page you're already on
 	$.pages[$page].forward($input, ($main) => {
-	    	if (history.length > 0) history[history.length-1].status = { "scrollTop":document.body.querySelector("main").scrollTop };
+	    	if (history.length > 0) history[history.length-1].status = {
+	    		scrollTop: document.body.querySelector("main").scrollTop,
+	    		backRefresh: false
+	    	};
 		history.push({"page":$page, "input":$input});
 		updateViewport($main);
 	});
@@ -18,6 +21,12 @@ const back = ($page) => {
 	$.pages[d.page].back(d.status, ($main) => {
 		updateViewport($main);
 		$main.scrollTop = d.status.scrollTop; //Scroll to where user was before they navigated away
+	});
+};
+
+const forceRefresh = ($page) => {
+	histrory.forEach(($v) => {
+		if ($page === undefined || $v.page === $page) $v.status.backRefresh = true;
 	});
 };
 
@@ -80,6 +89,7 @@ oldHeader.parentNode.replaceChild(header, oldHeader);
 return {
 	goTo: goTo,
 	back: back,
+	forceRefresh: forceRefresh,
 };
   
 })();
