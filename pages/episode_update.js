@@ -20,18 +20,13 @@ style.textContent = [
 	"main fieldset * { padding:2px; }",
 ].join("\n");	
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
-patientBanner.ngstyle = {
-	color: "#ffffff",
-	backgroundColor: "#005EB8",
-	height: "70px",
-	flex: "0 0 auto",
-};
+patientBanner.ngstyle = { color:"#ffffff", backgroundColor:"#005EB8", height:"70px", flex:"0 0 auto" };
 
 const episodeBanner = document.createElement("div"); main.appendChild(episodeBanner);
 episodeBanner.ngstyle = { flex: "0 0 auto", };
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1fr 1fr", overflow:"auto", borderTop:"2px solid transparent", borderBottom:"2px solid transparent" };
+divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(500px, 1fr))", overflow:"auto", borderTop:"2px solid transparent", borderBottom:"2px solid transparent" };
 
 [
 	["Body Registration", [
