@@ -104,7 +104,7 @@ const build = ($d) => {
 		if ($v.Notes !== null) td.rowSpan = "2";
 		td.ngstyle = { textAlign: "right", };
 		button = document.createElement("button"); td.appendChild(button);
-		button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
+		button.ngstyle = { borderRadius:"999px", };
 		button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":$v.EPN, "Episode":$v.Episode}); };
 			let span = document.createElement("span"); button.appendChild(span);
 			span.className = "faS";
