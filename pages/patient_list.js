@@ -1,7 +1,7 @@
 "use strict";
 $.pages["Patient List"] = (() => {
 
-const load = ($in, $cb) => {
+const forward = ($in, $cb) => {
 	
 	$.db.query("patient_list", {}, ($d) => {
 		build($d);
@@ -121,8 +121,8 @@ const build = ($d) => {
 };
 
 return {
-	"forwards": load,
-	"backwards": back,
+	forward: forward,
+	back: back,
 };
 
 })();
