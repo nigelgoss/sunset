@@ -50,8 +50,8 @@ Object.defineProperties(HTMLElement.prototype, {
 ].forEach(($v) => {
 	let link = document.createElement("link"); document.head.appendChild(link);
 	link.href = $v;
-	link.rel = "preload";
 	link.as = "font";
+	link.rel = "preload";
 	link.type = "font/woff2";
 	link.crossOrigin = true;
 });
