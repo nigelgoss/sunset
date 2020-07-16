@@ -5,11 +5,8 @@ const history = [];
 const goTo = ($page, $input) => {
 	if ($page === history.slice(-1)[0]?.page) return; //Can't go to the page you're already on
 	$.pages[$page].forward($input, ($main) => {
-	    	if (history.length > 0) history[history.length-1].status = {
-	    		scrollTop: document.body.querySelector("main").scrollTop,
-	    		backRefresh: false
-	    	};
-		history.push({"page":$page, "input":$input});
+	    	if (history.length > 0) history[history.length-1].status.scrollTop = document.body.querySelector("main").scrollTop;
+		history.push({"page":$page, "input":$input, status:{backRefresh:false} });
 		updateViewport($main);
 	});
 };
@@ -18,7 +15,7 @@ const back = ($page) => {
 	if (history.length <= 2) return;
 	do { history.pop(); } while ($page !== undefined && history.slice(-1)[0].page !== $page);
 	let d = history.slice(-1)[0];
-	let dir = (d.status.backRefresh) ? "back" : "forward";
+	let dir = (d.status.backRefresh === false) ? "back" : "forward";
 	$.pages[d.page][dir](d.input, ($main) => {
 		updateViewport($main);
 		$main.scrollTop = d.status.scrollTop; //Scroll to where user was before they navigated away
