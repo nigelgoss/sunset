@@ -2,7 +2,7 @@
 $.pages["Episode Update"] = (() => {
 	
 const forward = ($d, $cb) => {
-	$.db.query("Episode_List", {"EPN":$d.EPN}, ($d) => {
+	$.db.query("episode_list", {"EPN":$d.EPN}, ($d) => {
 		build($d);
 		$cb(main);
 	});
