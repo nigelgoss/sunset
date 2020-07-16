@@ -23,7 +23,12 @@ const spinner = ($status) => {
 	spinnerCount += ($status === true) ? 1 : -1;
 	console.log("Spinner", (spinnerCount > 0) ? true : false);
 };
-	
+
+const spinnerDiv = document.createElement("div");
+spinnerDiv.ngstyle = { backgroundColor:"grey", position:"absolute", top:"0", left:"0", width:"100%", height:"100%", placeItems:"center", display:"grid" };
+let span = document.createElement("span"); spinnerDiv.appendChild(span);
+span.textContent = "Please wait...";
+
 return {
 	query: query,
 };
