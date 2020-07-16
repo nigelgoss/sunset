@@ -21,7 +21,11 @@ const query = ($qry, $params = {}, $success) => {
 let spinnerCount = 0;
 const spinner = ($status) => {
 	spinnerCount += ($status === true) ? 1 : -1;
-	console.log("Spinner", (spinnerCount > 0) ? true : false);
+	if (spinnerCount > 0) {
+		document.body.appendChild(spinnerDiv);
+	} else {
+		spinnerDiv.remove();
+	};
 };
 
 const spinnerDiv = document.createElement("div");
