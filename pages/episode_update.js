@@ -109,7 +109,8 @@ span.textContent = "";
 button.appendChild(document.createTextNode(" Save"));
 button.ngpointerdown = () => {
 	console.log($.ngX.serialise(main));
-	$.ngX.clear();
+	$.nav.forceRefresh();
+	$.nav.back();
 };
 	
 const build = ($d) => {
@@ -130,8 +131,7 @@ const build = ($d) => {
 	button.className = "faS";
 	button.textContent = "";
 	button.ngpointerdown = () => {
-		$.nav.forceRefresh();
-		$.nav.back();
+		$.ngX.clear();
 	};
 	
 	$.ngX.deserialise(main, $d[1][0]);
