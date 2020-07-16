@@ -6,7 +6,7 @@ const delay = (ms) => { new Promise((resolve) => { setTimeout(() => { resolve();
 const query = ($qry, $params = {}, $success) => {
 
 	const xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = () => {
+	xhr.onreadystatechange = async () => {
 		if (xhr.readyState !== 4) return;
 		await delay(1000);
 		if (xhr.status === 200) $success(JSON.parse(xhr.responseText));
