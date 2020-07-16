@@ -4,10 +4,11 @@
 @keyframes opacityFade { 0% { opacity:0; } 100% { opacity:1; } }
 
 :root {
---background:#EEEEEE;
+--background:#FFFFFF;
 --nhsblue:#005EB8;
 }
 
 * { font-family:Helvetica; box-sizing:border-box; }
-button { padding:10px; min-width:45px; min-height:45px; }
+button { padding:10px; min-width:45px; min-height:45px; border:2px solid var(--background); color:var(--background); }
+button + button { margin-left:1px; }
 textarea { resize:none; height:80px; }
