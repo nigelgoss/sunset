@@ -49,11 +49,11 @@ Object.defineProperties(HTMLElement.prototype, {
 	"resources/fa-solid-900.woff2"
 ].forEach(($v) => {
 	let link = document.createElement("link"); document.head.appendChild(link);
+	link.href = $v;
 	link.rel = "preload";
 	link.as = "font";
 	link.type = "font/woff2";
 	link.crossOrigin = true;
-	link.href = $v;
 });
 			
 [
