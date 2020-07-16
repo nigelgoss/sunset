@@ -28,7 +28,7 @@ let table = document.createElement("table"); main.appendChild(table);
 table.ngstyle = { width:"100%", borderCollapse:"collapse", };
 
 let thead = document.createElement("thead"); table.appendChild(thead);
-thead.ngstyle = { fontWeight:"bold", backgroundColor:"lightgrey", border:"0 solid white", borderWidth:"2px 0 2px 0", };
+thead.ngstyle = { fontWeight:"bold", backgroundColor:"lightgrey", borderBottom:"2px solid var(--background)" };
 
 let tr = document.createElement("tr"); thead.appendChild(tr);
 let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
@@ -41,7 +41,7 @@ td = document.createElement("td"); tr.appendChild(td);
 td.ngstyle = { width:"1px", textAlign:"right", };
 				
 	let button = document.createElement("button"); td.appendChild(button);
-	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
+	button.ngstyle = { borderRadius:"999px", };
 	button.className = "faS";
 	button.textContent = "";
 	button.ngpointerdown = () => {
