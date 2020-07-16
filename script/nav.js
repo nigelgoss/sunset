@@ -4,7 +4,7 @@ const history = [];
 
 const goTo = ($page, $input) => {
 	if ($page === history.slice(-1)[0]?.page) return; 
-	$.pages[$page].forwards($input, ($ele) => {
+	$.pages[$page].forward($input, ($ele) => {
 		history.push({"page":$page, "input":$input});
 		updateViewport($ele);
 	});
@@ -14,9 +14,7 @@ const back = ($refresh) => {
 	if (history.length <= 2) return;
 	history.pop();
 	let d = history.slice(-1)[0];
-	$.pages[d.page].forwards(d.input, ($ele) => {
-		updateViewport($ele);
-	});
+	$.pages[d.page].back(($ele) => { updateViewport($ele); });
 };
 
 const updateViewport = ($ele) => {
