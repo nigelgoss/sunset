@@ -13,7 +13,7 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
-main.ngstyle = { display: "flex", flexDirection: "column", flex: "1 1 100%", };
+main.ngstyle = { display: "flex", flexDirection: "column", flex: "1 1 100%", overflow:"hidden" };
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
@@ -31,7 +31,7 @@ const episodeBanner = document.createElement("div"); main.appendChild(episodeBan
 episodeBanner.ngstyle = { flex: "0 0 auto", };
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1fr 1fr", };
+divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1fr 1fr", overflow:"auto" };
 
 [
 	["Body Registration", [
