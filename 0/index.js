@@ -45,17 +45,17 @@ Object.defineProperties(HTMLElement.prototype, {
 });
 
 [
-	"resources/fa-regular-400.woff2",
-	"resources/fa-solid-900.woff2"
+	["resources/splash.jpg", "image"],
+	["resources/fa-regular-400.woff2", "font"],
+	["resources/fa-solid-900.woff2", "font"],
 ].forEach(($v) => {
 	let link = document.createElement("link"); document.head.appendChild(link);
-	link.href = $v;
-	link.as = "font";
+	link.href = $v[0];
+	link.as = $v[1];
 	link.rel = "preload";
-	link.type = "font/woff2";
 	link.crossOrigin = true;
 });
-			
+
 [
 	"pages/sign_in.js",
 	"script/nav.js",
