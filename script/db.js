@@ -1,7 +1,7 @@
 "use strict";
 $.db = (() => {
 
-const delay = (ms) => { new Promise((resolve) => { setTimeout(() => { resolve(); }, ms) }); };
+const delay = (ms) => { return new Promise((resolve) => { setTimeout(() => { resolve(); }, ms); }); };
 	
 const query = ($qry, $params = {}, $success) => {
 
