@@ -69,7 +69,10 @@ Object.defineProperties(HTMLElement.prototype, {
 	script.src = $v;
 });
 			
-window.onload = () => { $.nav.goTo("Sign In"); };
+window.onload = () => {
+	$.nav.goTo("Sign In");
+	document.body.ngstyle = { opacity:"1", };
+};
 
 })();
  
