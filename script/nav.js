@@ -18,7 +18,8 @@ const back = ($page) => {
 	if (history.length <= 2) return;
 	do { history.pop(); } while ($page === undefined || history.slice(-1)[0].page !== $page);
 	let d = history.slice(-1)[0];
-	$.pages[d.page].back(d.status, ($main) => {
+	let dir = (d.status.backRefresh) ? "back" : "forward";
+	$.pages[d.page][dir](d.input, ($main) => {
 		updateViewport($main);
 		$main.scrollTop = d.status.scrollTop; //Scroll to where user was before they navigated away
 	});
