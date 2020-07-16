@@ -55,7 +55,7 @@ Object.defineProperties(HTMLElement.prototype, {
 });
 
 [
-	["FARegular", "fa-regular-400.woff2"],
+	["FARegular", "resources/fa-regular-400.woff2"],
 	["FASolid", "resources/fa-solid-900.woff2"],
 ].forEach(($v) => {
 	(new FontFace($v[0], "url('"+$v[1]+"')")).load();
