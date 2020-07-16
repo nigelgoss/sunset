@@ -1,7 +1,7 @@
 "use strict";
 $.pages["Episode Update"] = (() => {
 	
-const load = ($d, $cb) => {
+const forward = ($d, $cb) => {
 	
 	const $x = [
 		[
@@ -149,8 +149,8 @@ const build = ($d) => {
 };
 	
 return {
-	"forwards": load,
-	"backwards": back,
+	forward: forward,
+	back: back,
 };
 
 })();
