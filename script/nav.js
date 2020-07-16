@@ -16,7 +16,7 @@ const goTo = ($page, $input) => {
 
 const back = ($page) => {
 	if (history.length <= 2) return;
-	do { history.pop(); } while ($page === undefined || history.slice(-1)[0].page !== $page);
+	do { history.pop(); } while ($page !== undefined || history.slice(-1)[0].page !== $page);
 	let d = history.slice(-1)[0];
 	let dir = (d.status.backRefresh) ? "back" : "forward";
 	$.pages[d.page][dir](d.input, ($main) => {
