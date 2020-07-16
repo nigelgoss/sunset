@@ -4,8 +4,8 @@
 @keyframes opacityFade { 0% { opacity:0; } 100% { opacity:1; } }
 
 :root {
---background:#EEEEEE,
---nhsblue:#005EB8
+--background:#EEEEEE;
+--nhsblue:#005EB8;
 }
 
 * { font-family:Helvetica; box-sizing:border-box; }
