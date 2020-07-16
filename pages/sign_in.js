@@ -12,15 +12,20 @@ const back = ($d, $cb) => {
 const main = document.createElement("main");
 main.ngstyle = { flex:"1 1 auto", display:"grid", placeItems:"center", background:"url('resources/splash.jpg') no-repeat center center fixed", backgroundSize:"cover" };
 
-let div = document.createElement("div"); main.appendChild(div);
+let form = document.createElement("form"); main.appendChild(form);
+	
+let div = document.createElement("div"); form.appendChild(div);
 div.ngstyle = { display:"grid", backgroundColor:"rgb(255,255,255,0.67)", padding:"20px", borderRadius:"10px", gridTemplateColumns:"auto auto", gridGap:"5px" };
 
 let label = document.createElement("label"); div.appendChild(label); label.textContent = "Username";
-let input = document.createElement("input"); div.appendChild(input); input.type="text";
-
+let input = document.createElement("input"); div.appendChild(input);
+input.type="text";
+input.autocomplete = "username";
+	
 label = document.createElement("label"); div.appendChild(label); label.textContent = "Password";
-let form = document.createElement("form"); div.appendChild(form); //Keep Chrome happy
-input = document.createElement("input"); form.appendChild(input); input.type="password";
+input = document.createElement("input"); div.appendChild(input);
+input.type="password";
+input.autocomplete = "current-password";
 
 let button = document.createElement("button"); div.appendChild(button);
 button.ngstyle = { gridColumn:"1/-1" };
