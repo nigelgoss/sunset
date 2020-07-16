@@ -19,17 +19,16 @@ main.ngstyle = { overflow:"auto", flex:"1 1 auto" };
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
-	"main tbody:nth-of-type(odd) { background-color:#fafafa; }",
-	"main tbody:nth-of-type(even) { background-color:#e6e6e6; }",
-	"main td { padding:10px; }",
+	"main { grid-template-columns:repeat(5, auto); }",
+	"@media (max-width:800px) { main { grid-template-columns:repeat(1, auto); } }",
+	"main div { padding:5px; }",
+	"main div:nth-child(10n+1), main div:nth-child(10n+2), main div:nth-child(10n+3), main div:nth-child(10n+4), main div:nth-child(10n+5) { background-color:red; }",
+	"main div:nth-child(10n+6), main div:nth-child(10n+7), main div:nth-child(10n+8), main div:nth-child(10n+9), main div:nth-child(10n+10) { background-color:green; }",
 ].join("\n");
 
-let table = document.createElement("table"); main.appendChild(table);
-table.ngstyle = { width:"100%", borderCollapse:"collapse", };
+const table = document.createElement("div"); main.appendChild(table);
 
-let thead = document.createElement("thead"); table.appendChild(thead);
-thead.ngstyle = { fontWeight:"bold", backgroundColor:"lightgrey", borderBottom:"2px solid var(--background)" };
-
+/*
 let tr = document.createElement("tr"); thead.appendChild(tr);
 let td = document.createElement("td"); tr.appendChild(td); td.textContent = "Location";
 td = document.createElement("td"); tr.appendChild(td); td.textContent = "Name";
@@ -76,46 +75,28 @@ td.ngstyle = { width:"1px", textAlign:"right", };
 	button.className = "faS";
 	button.textContent = "";
 	button.ngpointerdown = () => {};
-
+*/
 const build = ($d) => {
 
-	table.querySelectorAll("tbody").forEach(($v) => { $v.parentElement.removeChild($v); });
+	//table.querySelectorAll("tbody").forEach(($v) => { $v.parentElement.removeChild($v); });
 	
 	$d.forEach(($v) => {
 		
-		let tbody = document.createElement("tbody"); table.appendChild(tbody);
-		tbody.ngstyle = {
-			border: "0 solid white",
-			borderWidth: "2px 0 2px 0",
-		};
+		let td = document.createElement("div"); table.appendChild(td); td.textContent = $v.Location;
+		td = document.createElement("td"); table.appendChild(td); td.textContent = $v.Name;
+		td = document.createElement("td"); table.appendChild(td); td.textContent = $v.NHSNo;
+		td = document.createElement("td"); table.appendChild(td); td.textContent = $v.HospitalNo;
+		td = document.createElement("td"); table.appendChild(td); td.textContent = $v.Birth;
+		td = document.createElement("td"); table.appendChild(td); td.textContent = $v.Death;
 
-		let tr = document.createElement("tr"); tbody.appendChild(tr);
-
-		let td = document.createElement("td"); tr.appendChild(td);
-		if ($v.Notes !== null) td.rowSpan = "2";
-		td.textContent = $v.Location;
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Name;
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.NHSNo;
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.HospitalNo;
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Birth;
-		td = document.createElement("td"); tr.appendChild(td); td.textContent = $v.Death;
-
-		td = document.createElement("td"); tr.appendChild(td);
-		if ($v.Notes !== null) td.rowSpan = "2";
+		td = document.createElement("td"); table.appendChild(td);
 		td.ngstyle = { textAlign: "right", };
-		button = document.createElement("button"); td.appendChild(button);
+		let button = document.createElement("button"); td.appendChild(button);
 		button.ngstyle = { borderRadius:"999px", };
 		button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":$v.EPN, "Episode":$v.Episode}); };
 			let span = document.createElement("span"); button.appendChild(span);
 			span.className = "faS";
 			span.textContent = "";
-		
-		if ($v.Notes !== null) {
-			tr = document.createElement("tr"); tbody.appendChild(tr);
-			td = document.createElement("td"); tr.appendChild(td);
-			td.colSpan = "5";
-			td.textContent = "Notes: " + $v.Notes;
-		};
 		
 	});
 
