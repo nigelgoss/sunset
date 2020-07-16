@@ -19,14 +19,14 @@ main.ngstyle = { overflow:"auto", flex:"1 1 auto" };
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
-	"main { grid-template-columns:repeat(7, auto); }",
-	"@media (max-width:800px) { main { grid-template-columns:repeat(1, auto); } }",
-	"main div { padding:5px; }",
-	"main div:nth-child(14n+1), main div:nth-child(14n+2), main div:nth-child(14n+3), main div:nth-child(14n+4), main div:nth-child(14n+5), main div:nth-child(14n+6), main div:nth-child(14n+7) { background-color:red; }",
-	"main div:nth-child(14n+8), main div:nth-child(14n+9), main div:nth-child(14n+10), main div:nth-child(14n+11), main div:nth-child(14n+12), main div:nth-child(14n+13), main div:nth-child(14n+14) { background-color:green; }",
+	"main section { grid-template-columns:repeat(7, auto); }",
+	"@media (max-width:800px) { main section { grid-template-columns:repeat(1, auto); } }",
+	"main section div { padding:5px; }",
+	"main section div:nth-child(14n+1), main section section div:nth-child(14n+2), main section div:nth-child(14n+3), main section div:nth-child(14n+4), main section div:nth-child(14n+5), main section div:nth-child(14n+6), main section div:nth-child(14n+7) { background-color:red; }",
+	"main section div:nth-child(14n+8), main section div:nth-child(14n+9), main section div:nth-child(14n+10), main section div:nth-child(14n+11), main section div:nth-child(14n+12), main section div:nth-child(14n+13), main section div:nth-child(14n+14) { background-color:green; }",
 ].join("\n");
 
-const table = document.createElement("div"); main.appendChild(table);
+const section = document.createElement("section"); main.appendChild(section);
 
 /*
 let tr = document.createElement("tr"); thead.appendChild(tr);
@@ -82,14 +82,14 @@ const build = ($d) => {
 	
 	$d.forEach(($v) => {
 		
-		let td = document.createElement("div"); table.appendChild(td); td.textContent = $v.Location;
-		td = document.createElement("div"); table.appendChild(td); td.textContent = $v.Name;
-		td = document.createElement("div"); table.appendChild(td); td.textContent = $v.NHSNo;
-		td = document.createElement("div"); table.appendChild(td); td.textContent = $v.HospitalNo;
-		td = document.createElement("div"); table.appendChild(td); td.textContent = $v.Birth;
-		td = document.createElement("div"); table.appendChild(td); td.textContent = $v.Death;
+		let td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Location;
+		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Name;
+		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.NHSNo;
+		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.HospitalNo;
+		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Birth;
+		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Death;
 
-		td = document.createElement("div"); table.appendChild(td);
+		td = document.createElement("div"); section.appendChild(td);
 		td.ngstyle = { textAlign: "right", };
 		let button = document.createElement("button"); td.appendChild(button);
 		button.ngstyle = { borderRadius:"999px", };
