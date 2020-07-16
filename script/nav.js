@@ -3,9 +3,9 @@ $.nav = (() => {
 const history = [];
 
 const goTo = ($page, $input) => {
-	if ($page === history.slice(-1)[0]?.page) return; 
+	if ($page === history.slice(-1)[0]?.page) return; //Can't go to the page you're already on
 	$.pages[$page].forward($input, ($ele) => {
-	    	history[history.length-1].status = {"TBC":"TBC"}
+	    	if (history.length > 0) history[history.length-1].status = {"TBC":"TBC"};
 		history.push({"page":$page, "input":$input});
 		updateViewport($ele);
 	});
