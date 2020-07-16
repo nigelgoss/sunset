@@ -11,9 +11,9 @@ const goTo = ($page, $input) => {
 	});
 };
 
-const back = ($refresh) => {
+const back = ($page) => {
 	if (history.length <= 2) return;
-	history.pop();
+	do { history.pop(); } while ($page === undefined || history.slice(-1)[0].page !== $page);
 	let d = history.slice(-1)[0];
 	$.pages[d.page].back(d.status, ($main) => {
 		updateViewport($main);
