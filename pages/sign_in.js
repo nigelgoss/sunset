@@ -19,7 +19,8 @@ let label = document.createElement("label"); div.appendChild(label); label.textC
 let input = document.createElement("input"); div.appendChild(input); input.type="text";
 
 label = document.createElement("label"); div.appendChild(label); label.textContent = "Password";
-input = document.createElement("input"); div.appendChild(input); input.type="password";
+let form = document.createElement("form"); div.appendChild(form); //Keep Chrome happy
+input = document.createElement("input"); form.appendChild(input); input.type="password";
 
 let button = document.createElement("button"); div.appendChild(button);
 button.ngstyle = { gridColumn:"1/-1" };
