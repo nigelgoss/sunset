@@ -58,9 +58,10 @@ Object.defineProperties(HTMLElement.prototype, {
 	["FARegular", "resources/fa-regular-400.woff2"],
 	["FASolid", "resources/fa-solid-900.woff2"],
 ].forEach(($v) => {
-	(new FontFace($v[0], "url('"+$v[1]+"')")).load();
+	let font = new FontFace($v[0], "url('"+$v[1]+"');
+	font.load().then(() => { document.fonts.add(font); });
 });
-			
+	
 [
 	"pages/sign_in.js",
 	"script/nav.js",
