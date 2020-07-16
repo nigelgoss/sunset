@@ -71,7 +71,7 @@ Object.defineProperties(HTMLElement.prototype, {
 			
 window.onload = () => {
 	$.nav.goTo("Sign In");
-	document.body.ngstyle = { opacity:"1", };
+	document.body.ngstyle = { animation:"opacityFade 3s", opacity:"1", };
 };
 
 })();
