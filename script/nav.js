@@ -23,9 +23,10 @@ const back = ($page) => {
 	});
 };
 
-const forceRefresh = ($page) => {
+const forceRefresh = ($pages) => {
+	if (typeof $pages === "string") $pages = [$pages];
 	history.forEach(($v) => {
-		if ($page === undefined || $v.page === $page) $v.status.backRefresh = true;
+		if ($pages === undefined || $pages.indexOf($v.page) !== -1) $v.status.backRefresh = true;
 	});
 };
 
