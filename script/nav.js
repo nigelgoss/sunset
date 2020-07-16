@@ -17,7 +17,7 @@ const back = ($refresh) => {
 	let d = history.slice(-1)[0];
 	$.pages[d.page].back(d.status, ($main) => {
 		updateViewport($main);
-		$main.scrollTop = d.status.scrollTop;
+		$main.scrollTop = d.status.scrollTop; //Scroll to where user was before they navigated away
 	});
 };
 
