@@ -23,8 +23,8 @@ const back = ($page) => {
 };
 
 const forceRefresh = ($page) => {
-	history.forEach(($v) => {
-		if ($page === undefined || $v.page === $page) $v.status.backRefresh = true;
+	history.forEach(($v, $i, $this) => {
+		if ($page === undefined || $v.page === $page) $this[$i].status.backRefresh = true;
 	});
 };
 
