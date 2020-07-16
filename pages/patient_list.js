@@ -22,11 +22,12 @@ style.textContent = [
 	"main section { grid-template-columns:repeat(7, auto); }",
 	"@media (max-width:800px) { main section { grid-template-columns:repeat(1, auto); } }",
 	"main section div { padding:5px; }",
-	"main section div:nth-child(14n+1), main section section div:nth-child(14n+2), main section div:nth-child(14n+3), main section div:nth-child(14n+4), main section div:nth-child(14n+5), main section div:nth-child(14n+6), main section div:nth-child(14n+7) { background-color:red; }",
+	"main section div:nth-child(14n+1), main section div:nth-child(14n+2), main section div:nth-child(14n+3), main section div:nth-child(14n+4), main section div:nth-child(14n+5), main section div:nth-child(14n+6), main section div:nth-child(14n+7) { background-color:red; }",
 	"main section div:nth-child(14n+8), main section div:nth-child(14n+9), main section div:nth-child(14n+10), main section div:nth-child(14n+11), main section div:nth-child(14n+12), main section div:nth-child(14n+13), main section div:nth-child(14n+14) { background-color:green; }",
 ].join("\n");
 
 const section = document.createElement("section"); main.appendChild(section);
+section.ngstyle = { display:"grid" };
 
 /*
 let tr = document.createElement("tr"); thead.appendChild(tr);
