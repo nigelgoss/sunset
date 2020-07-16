@@ -3,6 +3,7 @@ $.pages["Episode Update"] = (() => {
 	
 const forward = ($d, $cb) => {
 	$.db.query("episode_list", {"EPN":$d.EPN}, ($d) => {
+		$.ngX.clear();
 		build($d);
 		$cb(main);
 	});
@@ -128,7 +129,10 @@ const build = ($d) => {
 	button.ngstyle = { borderRadius:"999px", };
 	button.className = "faS";
 	button.textContent = "";
-	button.ngpointerdown = () => { $.ngX.clear(); };
+	button.ngpointerdown = () => {
+		$.nav.forceRefresh();
+		$.nav.back();
+	};
 	
 	$.ngX.deserialise(main, $d[1][0]);
 	
