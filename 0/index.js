@@ -53,7 +53,7 @@ Object.defineProperties(HTMLElement.prototype, {
 	link.href = $v[0];
 	link.as = $v[1];
 	link.rel = "preload";
-	link.crossOrigin = true;
+	link.crossOrigin = "anonymous";
 });
 
 [
