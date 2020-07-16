@@ -31,7 +31,7 @@ const episodeBanner = document.createElement("div"); main.appendChild(episodeBan
 episodeBanner.ngstyle = { flex: "0 0 auto", };
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1fr 1fr", overflow:"auto" };
+divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"1fr 1fr 1fr", overflow:"auto", borderTop:"2px solid transparent", borderBottom:"2px solid transparent" };
 
 [
 	["Body Registration", [
