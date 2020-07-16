@@ -1,7 +1,7 @@
 "use strict";
 $.pages["Sign In"] = (() => {
 
-const load = ($d, $cb) => {
+const forward = ($d, $cb) => {
 	$cb(main);
 };
 
@@ -21,8 +21,8 @@ button.textContent = "Sign In";
 button.ngpointerdown = () => { $.nav.goTo("Patient List"); };
 
 return {
-	"forwards": load,
-	"backwards": back,
+	forward: forward,
+	back: back,
 };
 
 })();
