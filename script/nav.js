@@ -38,7 +38,7 @@ const updateViewport = ($ele) => {
 };
   
 let header = document.createElement("header");
-header.ngstyle = { backgroundColor:"var(--nhsblue)", padding:"10px", textAlign:"center", display:"flex", borderBottom:"2px solid var(--background)" };
+header.ngstyle = { backgroundColor:"var(--nhsblue)", padding:"10px", textAlign:"center", display:"flex", borderBottom:"2px solid var(--background)", flex:"0 0 auto" };
 
 let div = document.createElement("div"); header.appendChild(div);
 div.ngstyle = { flex: "0 0 auto", };
