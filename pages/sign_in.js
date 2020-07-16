@@ -16,6 +16,10 @@ main.ngstyle = {
 	"place-items": "center",
 };
 
+let img = document.createElement("img"); main.appendChild(img);
+img.src = "resources/splash.jpg";
+img.ngstyle = { objectFit:"contain", objectPosition:"center" };
+	
 let button = document.createElement("button"); main.appendChild(button);
 button.textContent = "Sign In";
 button.ngpointerdown = () => { $.nav.goTo("Patient List"); };
