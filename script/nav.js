@@ -4,10 +4,10 @@ const history = [];
 
 const goTo = ($page, $input) => {
 	if ($page === history.slice(-1)[0]?.page) return; //Can't go to the page you're already on
-	$.pages[$page].forward($input, ($ele) => {
-	    	if (history.length > 0) history[history.length-1].status = {"TBC":"TBC"};
+	$.pages[$page].forward($input, ($main) => {
+	    	if (history.length > 0) history[history.length-1].status = { "scrollTop":document.body.querySelector("main").scrollTop };
 		history.push({"page":$page, "input":$input});
-		updateViewport($ele);
+		updateViewport($main);
 	});
 };
 
@@ -15,7 +15,10 @@ const back = ($refresh) => {
 	if (history.length <= 2) return;
 	history.pop();
 	let d = history.slice(-1)[0];
-	$.pages[d.page].back(d.status, ($ele) => { updateViewport($ele); });
+	$.pages[d.page].back(d.status, ($main) => {
+		updateViewport($main);
+		$main.scrollTop = d.status.scrollTop;
+	});
 };
 
 const updateViewport = ($ele) => {
