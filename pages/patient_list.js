@@ -15,7 +15,7 @@ const back = ($in, $cb) => {
 };
 
 const main = document.createElement("main");
-main.ngstyle = { overflow:"auto" };
+main.ngstyle = { overflow:"auto", flex:"1 1 auto" };
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
