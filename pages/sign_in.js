@@ -13,7 +13,7 @@ const main = document.createElement("main");
 main.ngstyle = { flex:"1 1 auto", display:"grid", placeItems:"center", background:"url('resources/splash.jpg') no-repeat center center fixed", backgroundSize:"cover" };
 
 let div = document.createElement("div"); main.appendChild(div);
-div.ngstyle = { display:"grid", backgroundColor:"white", padding:"20px" };
+div.ngstyle = { display:"grid", backgroundColor:"rgb(255,255,255,0.67)", padding:"20px", borderRadius:"10px" };
 
 let label = document.createElement("label"); div.appendChild(label); label.textContent = "Username";
 let input = document.createElement("input"); div.appendChild(input); input.type="text";
