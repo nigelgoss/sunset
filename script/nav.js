@@ -23,7 +23,7 @@ const back = ($page) => {
 };
 
 const forceRefresh = ($page) => {
-	histrory.forEach(($v) => {
+	history.forEach(($v) => {
 		if ($page === undefined || $v.page === $page) $v.status.backRefresh = true;
 	});
 };
