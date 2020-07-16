@@ -10,16 +10,8 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
-main.ngstyle = {
-	"flex": "1 1 auto",
-	"display": "grid",
-	"place-items": "center",
-};
+main.ngstyle = { flex:"1 1 auto", display:"grid", placeItems:"center", background:"url('resources/splash.jpg') no-repeat center center fixed", backgroundSize:"cover" };
 
-let img = document.createElement("img"); main.appendChild(img);
-img.src = "resources/splash.jpg";
-img.ngstyle = { objectFit:"contain", objectPosition:"center" };
-	
 let button = document.createElement("button"); main.appendChild(button);
 button.textContent = "Sign In";
 button.ngpointerdown = () => { $.nav.goTo("Patient List"); };
