@@ -16,10 +16,10 @@ let div = document.createElement("div"); main.appendChild(div);
 div.ngstyle = { display:"grid", backgroundColor:"white", padding:"20px" };
 
 let label = document.createElement("label"); div.appendChild(label); label.textContent = "Username";
-let input = document.createElement("input"); div.appendChild(input); input.type="text;
+let input = document.createElement("input"); div.appendChild(input); input.type="text";
 
 label = document.createElement("label"); div.appendChild(label); label.textContent = "Password";
-input = document.createElement("input"); div.appendChild(input); input.type="password;
+input = document.createElement("input"); div.appendChild(input); input.type="password";
 
 let button = document.createElement("button"); div.appendChild(button);
 button.textContent = "Sign In";
