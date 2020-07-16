@@ -1,7 +1,7 @@
 "use strict";
 $.pages["Admin"] = (() => {
 
-const load = ($d, $cb) => {
+const forward = ($d, $cb) => {
 	$cb(main);
 };
 
@@ -13,8 +13,8 @@ const main = document.createElement("main");
 main.textContent = "** Admin **";
 
 return {
-	"forwards": load,
-	"backwards": back,
+	forward: forward,
+	back: back,
 };
   
 })();
