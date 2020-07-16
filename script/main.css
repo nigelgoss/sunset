@@ -4,6 +4,7 @@
 @keyframes opacityFade { 0% { opacity:0; } 100% { opacity:1; } }
 
 :root {
+--background:#EEEEEE,
 --nhsblue:#005EB8
 }
 
