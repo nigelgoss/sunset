@@ -26,7 +26,7 @@ const episodeBanner = document.createElement("div"); main.appendChild(episodeBan
 episodeBanner.ngstyle = { flex: "0 0 auto", };
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(500px, 1fr))", overflow:"auto", borderTop:"2px solid transparent", borderBottom:"2px solid transparent" };
+divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(500px, 1fr))", overflow:"auto", borderTop:"2px solid var(--background)", borderBottom:"2px solid var(--background)" };
 
 [
 	["Body Registration", [
@@ -101,7 +101,7 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repea
 });
 
 let button = document.createElement("button"); main.appendChild(button);
-button.ngstyle = { flex: "0 0 auto", width: "100%", backgroundColor: "#007f3b", color: "#ffffff", };
+button.ngstyle = { flex:"0 0 auto", width:"100%" };
 let span = document.createElement("span"); button.appendChild(span);
 span.className = "faS";
 span.textContent = "";
@@ -119,13 +119,13 @@ const build = ($d) => {
 	
 	$d[1].forEach(($v) => {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
-		button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
+		button.ngstyle = { borderRadius:"999px", };
 		button.textContent = $v.Episode;
 		button.ngpointerdown = () => {};
 	});
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
-	button.ngstyle = { backgroundColor:"#007f3b", color:"#ffffff", borderRadius:"999px", };
+	button.ngstyle = { borderRadius:"999px", };
 	button.className = "faS";
 	button.textContent = "";
 	button.ngpointerdown = () => { $.ngX.clear(); };
