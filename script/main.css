@@ -6,9 +6,10 @@
 :root {
 --background:#FFFFFF;
 --nhsblue:#005EB8;
+--button:#007f3b";
 }
 
 * { font-family:Helvetica; box-sizing:border-box; }
-button { padding:10px; min-width:45px; min-height:45px; border:2px solid var(--background); color:var(--background); }
+button { padding:10px; min-width:45px; min-height:45px; border:2px solid var(--background); color:var(--background); background-color:var(--button); }
 button + button { margin-left:1px; }
 textarea { resize:none; height:80px; }
