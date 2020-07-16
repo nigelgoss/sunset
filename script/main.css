@@ -3,6 +3,6 @@
 
 @keyframes opacityFade { 0% { opacity:0; } 100% { opacity:1; } }
 
-* { font-family:Helvetica; }
+* { font-family:Helvetica; box-sizing:border-box; }
 button { padding:10px; min-width:45px; min-height:45px; }
 textarea { resize:none; height:80px; }
