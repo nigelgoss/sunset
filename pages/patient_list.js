@@ -50,7 +50,7 @@ const build = ($d) => {
 
 	//table.querySelectorAll("tbody").forEach(($v) => { $v.parentElement.removeChild($v); });
 
-	["Fridge", "Name", "NHS No.", "Hospital No.", "Born", "Died", null].forEach(($v, $i) => {
+	["Location", "Name", "NHS No.", "Hospital No.", "Born", "Died", null].forEach(($v, $i) => {
 
 		let div = document.createElement("div"); section.appendChild(div);
 		div.classList.add("notThin", "fat-border");
@@ -67,8 +67,8 @@ const build = ($d) => {
 	
 		[
 			{
-				label:{textContent:"Fridge",classList:[],style:{"--thinOrder":os+1}},
-				data:{textContent:"Fridge",classList:["fat-rowspan-2","fat-border"],style:{"--fatOrder":os+8,"--thinOrder":os+2}}
+				label:{textContent:"Location",classList:[],style:{"--thinOrder":os+1}},
+				data:{textContent:"Location",classList:["fat-rowspan-2","fat-border"],style:{"--fatOrder":os+8,"--thinOrder":os+2}}
 			},{
 				label:{textContent:"Name",classList:[],style:{"--thinOrder":os+4}},
 				data:{textContent:"Name",classList:[],style:{"--fatOrder":os+9,"--thinOrder":os+5}}
