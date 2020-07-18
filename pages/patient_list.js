@@ -110,6 +110,7 @@ const build = ($d) => {
 			if ($i2 === 6) {
 				let button = document.createElement("button"); div.appendChild(button);
 				button.textContent = ">";
+				button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":$v.EPN, "Episode":$v.Episode}); };
 			};
 
 		});
