@@ -14,20 +14,20 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
-main.ngstyle = { display: "flex", flexDirection: "column", flex: "1 1 100%", overflow:"hidden" };
+main.ngstyle = {"display":"flex", "flex-direction":"column", "flex":"1 1 100%", "overflow":"hidden"};
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
 	"main fieldset * { padding:2px; }",
 ].join("\n");	
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
-patientBanner.ngstyle = { color:"#ffffff", backgroundColor:"#005EB8", height:"70px", flex:"0 0 auto" };
+patientBanner.ngstyle = {"color":"#ffffff", "background-color":"#005EB8", "height":"70px", "flex":"0 0 auto"};
 
 const episodeBanner = document.createElement("div"); main.appendChild(episodeBanner);
-episodeBanner.ngstyle = { flex: "0 0 auto", };
+episodeBanner.ngstyle = {"flex":"0 0 auto"};
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(500px, 1fr))", overflow:"auto", borderTop:"2px solid var(--background)", borderBottom:"2px solid var(--background)" };
+divInput.ngstyle = {"flex":"1 1 auto", "display":"grid", "grid-template-columns":"repeat(auto-fit, minmax(500px, 1fr))", "overflow":"auto", "border-top":"2px solid var(--background)", "border-bottom":"2px solid var(--background)"};
 
 [
 	["Body Registration", [
@@ -87,12 +87,12 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repea
 	]]
 ].forEach(($v) => {
 	let fieldset = document.createElement("fieldset"); divInput.appendChild(fieldset);
-	fieldset.ngstyle = { backgroundColor:"#eeeeee", margin:"5px", border:"2px solid grey", borderRadius:"10px", };
+	fieldset.ngstyle = {"background-color":"#eeeeee", "margin":"5px", "border":"2px solid grey", "border-radius":"10px"};
 	let legend = document.createElement("legend"); fieldset.appendChild(legend);
-	legend.ngstyle = { fontSize:"1.2em", fontWeight:"bold", border:"2px solid grey", borderRadius:"10px", backgroundColor:"#FAE100", };
+	legend.ngstyle = {"font-size":"1.2em", "font-weight":"bold", "border":"2px solid grey", "border-radius":"10px", "background-color":"#FAE100"};
 	legend.textContent = $v[0];
 	let div = document.createElement("div"); fieldset.appendChild(div);
-	div.ngstyle = { display:"grid", gridTemplateColumns:"auto 1fr", gridGap:"5px", };
+	div.ngstyle = {"display":"grid", "grid-template-columns":"auto 1fr", "grid-gap":"5px"};
 	$v[1].forEach(($v2) => {
 		let label = document.createElement("label"); div.appendChild(label); label.textContent = $v2[0];
 		let ele = $v2[1]();
@@ -102,7 +102,7 @@ divInput.ngstyle = { flex:"1 1 auto", display:"grid", gridTemplateColumns:"repea
 });
 
 let button = document.createElement("button"); main.appendChild(button);
-button.ngstyle = { flex:"0 0 auto", width:"100%" };
+button.ngstyle = {"flex":"0 0 auto", "width":"100%"};
 let span = document.createElement("span"); button.appendChild(span);
 span.className = "faS";
 span.textContent = "";
@@ -121,13 +121,13 @@ const build = ($d) => {
 	
 	$d[1].forEach(($v) => {		
 		let button = document.createElement("button"); episodeBanner.appendChild(button);
-		button.ngstyle = { borderRadius:"999px", };
+		button.ngstyle = {"border-radius":"999px"};
 		button.textContent = $v.Episode;
 		button.ngpointerdown = () => {};
 	});
 	
 	button = document.createElement("button"); episodeBanner.appendChild(button);
-	button.ngstyle = { borderRadius:"999px", };
+	button.ngstyle = {"border-radius":"999px"};
 	button.className = "faS";
 	button.textContent = "";
 	button.ngpointerdown = () => {
