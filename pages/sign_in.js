@@ -10,12 +10,12 @@ const back = ($d, $cb) => {
 };
 
 const main = document.createElement("main");
-main.ngstyle = { flex:"1 1 100%", display:"grid", placeItems:"center", background:"url('resources/splash.jpg') no-repeat center center fixed", backgroundSize:"cover" };
+main.ngstyle = {"flex":"1 1 100%", "display":"grid", "place-items":"center", "background":"url('resources/splash.jpg') no-repeat center center fixed", "background-size":"cover"};
 
 let form = document.createElement("form"); main.appendChild(form);
 	
 let div = document.createElement("div"); form.appendChild(div);
-div.ngstyle = { display:"grid", backgroundColor:"rgb(255,255,255,0.67)", padding:"20px", borderRadius:"10px", gridTemplateColumns:"auto auto", gridGap:"5px" };
+div.ngstyle = {"display":"grid", "background-color":"rgb(255,255,255,0.67)", "padding":"20px", "border-radius":"10px", "grid-template-columns":"auto auto", "grid-gap":"5px"};
 
 let label = document.createElement("label"); div.appendChild(label); label.textContent = "Username";
 let input = document.createElement("input"); div.appendChild(input);
@@ -28,7 +28,7 @@ input.type="password";
 input.autocomplete = "current-password";
 
 let button = document.createElement("button"); div.appendChild(button);
-button.ngstyle = { gridColumn:"1/-1" };
+button.ngstyle = {"grid-column":"1/-1"};
 button.textContent = "Sign In";
 button.ngpointerdown = () => { $.nav.goTo("Patient List"); };
 
