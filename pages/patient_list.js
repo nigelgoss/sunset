@@ -39,6 +39,17 @@ style.textContent = [
 	"}"
 ].join("\n");
 
+["Fridge", "Name", "NHS No.", "Hospital No.", "Born", "Died", null].forEach(($v, $i) => {
+
+	let div = document.createElement("div"); main.appendChild(div);
+	div.classList.add("notThin", "fat-border");
+	if ($i === 7) div.classList.add("thin-border");
+	div.ngstyle = {"--fatOrder": $i};
+	div.ngstyle = {"font-style":"italic", "background-color":"lightgrey"};
+	div.textContent = $v;
+
+});
+	
 const section = document.createElement("section"); main.appendChild(section);
 section.ngstyle = {"display":"grid"};
 
