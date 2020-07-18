@@ -38,43 +38,43 @@ const updateViewport = ($ele) => {
 };
   
 let header = document.createElement("header");
-header.ngstyle = { backgroundColor:"var(--nhsblue)", padding:"10px", textAlign:"center", display:"flex", borderBottom:"2px solid var(--background)", flex:"0 0 auto" };
+header.ngstyle = {"background-color":"var(--nhsblue)", "padding":"10px", "text-align":"center", "display":"flex", "border-bottom":"2px solid var(--background)", "flex":"0 0 auto"};
 
 let div = document.createElement("div"); header.appendChild(div);
-div.ngstyle = { flex: "0 0 auto", };
+div.ngstyle = {"flex":"0 0 auto"};
 
 const buttonBack = document.createElement("button"); div.appendChild(buttonBack);
-buttonBack.ngstyle = { borderRadius:"999px" };
+buttonBack.ngstyle = {"border-radius":"999px"};
 buttonBack.className = "faS";
 buttonBack.textContent = "";
 buttonBack.ngpointerdown = () => { $.nav.back(); };
 
 const title = document.createElement("div"); header.appendChild(title);
-title.ngstyle = { flex:"1 1 auto", display:"grid", placeItems:"center", color:"var(--background)" };
+title.ngstyle = {"flex":"1 1 auto", "display":"grid", "place-items":"center", "color":"var(--background)"};
 
 div = document.createElement("div"); header.appendChild(div);
-div.ngstyle = { flex: "0 0 auto", };
+div.ngstyle = {"flex":"0 0 auto"};
 
 let button = document.createElement("button"); div.appendChild(button);
-button.ngstyle = { borderRadius:"999px" };
+button.ngstyle = {"border-radius":"999px"};
 button.className = "faS";
 button.textContent = "";
 button.ngpointerdown = () => { location.reload(true); };
 
 button = document.createElement("button"); div.appendChild(button);
-button.ngstyle = { borderRadius:"999px" };
+button.ngstyle = {"border-radius":"999px"};
 button.className = "faS";
 button.textContent = ""; 
 button.ngpointerdown = () => { $.nav.goTo("Admin"); };
 
 button = document.createElement("button"); div.appendChild(button);
-button.ngstyle = { borderRadius:"999px" };
+button.ngstyle = {"border-radius":"999px"};
 button.className = "faS";
 button.textContent = "";
 button.ngpointerdown = () => { $.ngX.open("https://www.google.com/"); };
 
 button = document.createElement("button"); div.appendChild(button);
-button.ngstyle = { borderRadius:"999px" };
+button.ngstyle = {"border-radius":"999px"};
 button.className = "faS";
 button.textContent = "";
 button.ngpointerdown = () => { $.nav.back("Patient List"); };
