@@ -38,7 +38,7 @@ Object.defineProperties(HTMLElement.prototype, {
 				
 	"ngstyle": {
 		"set": function ($d) {
-			Object.keys($d).forEach(($v) => { this.style[$v] = $d[$v]; }); 
+			Object.keys($d).forEach($v => { this.style.setProperty($v, $d[$v]); });
 		},
 	},
 
