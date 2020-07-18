@@ -61,7 +61,7 @@ const build = ($d) => {
 
 	});
 	
-	$d.forEach($v => {
+	$d.forEach(($v, $i) => {
 		
 		let os = $i * 15;
 	
