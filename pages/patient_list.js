@@ -17,38 +17,31 @@ main.ngstyle = {"overflow":"auto", "flex":"1 1 auto"};
 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
-	"main div { padding:10px; display:grid; align-items:center; }",
-	"main .tbodyOdd { background-color:lightgreen; }",
-	"main .tbodyEven { background-color:lightblue; }",
+	":root {",
+	"--borderColour:grey;",
+	"}",
+	
+	"main section div { padding:10px; display:grid; align-items:center; }",
+	"main section .tbodyOdd { background-color:lightgreen; }",
+	"main section .tbodyEven { background-color:lightblue; }",
 
 	"@media (max-width:399px) {",
 		/* NARROW */
-		"main { grid-template-columns:auto 1fr min-content; }",
-		"main .notThin { display:none; }",
-		"main div { order:var(--thinOrder); }",
-		"main .thin-border { border-bottom:1px solid var(--borderColour); }",
-		"main .thin-rowspan-7 { grid-row-end:span 7; }",
+		"main section { grid-template-columns:auto 1fr min-content; }",
+		"main section .notThin { display:none; }",
+		"main section div { order:var(--thinOrder); }",
+		"main section .thin-border { border-bottom:1px solid var(--borderColour); }",
+		"main section .thin-rowspan-7 { grid-row-end:span 7; }",
 	"} @media (min-width:400px) {",
 		/* WIDE */
-		"main { grid-template-columns:auto auto auto auto auto auto min-content; }",
-		"main .notFat { display:none; }",
-		"main div { order:var(--fatOrder); }",
-		"main .fat-border { border-bottom:1px solid var(--borderColour); }",
-		"main .fat-rowspan-2 { grid-row-end:span 2; }",
-		"main .fat-colspan-5 { grid-column-end:span 5; }",
+		"main section { grid-template-columns:auto auto auto auto auto auto min-content; }",
+		"main section .notFat { display:none; }",
+		"main section div { order:var(--fatOrder); }",
+		"main section .fat-border { border-bottom:1px solid var(--borderColour); }",
+		"main section .fat-rowspan-2 { grid-row-end:span 2; }",
+		"main section .fat-colspan-5 { grid-column-end:span 5; }",
 	"}"
 ].join("\n");
-
-["Fridge", "Name", "NHS No.", "Hospital No.", "Born", "Died", null].forEach(($v, $i) => {
-
-	let div = document.createElement("div"); main.appendChild(div);
-	div.classList.add("notThin", "fat-border");
-	if ($i === 7) div.classList.add("thin-border");
-	div.ngstyle = {"--fatOrder": $i};
-	div.ngstyle = {"font-style":"italic", "background-color":"lightgrey"};
-	div.textContent = $v;
-
-});
 	
 const section = document.createElement("section"); main.appendChild(section);
 section.ngstyle = {"display":"grid"};
@@ -56,6 +49,17 @@ section.ngstyle = {"display":"grid"};
 const build = ($d) => {
 
 	//table.querySelectorAll("tbody").forEach(($v) => { $v.parentElement.removeChild($v); });
+
+	["Fridge", "Name", "NHS No.", "Hospital No.", "Born", "Died", null].forEach(($v, $i) => {
+
+		let div = document.createElement("div"); section.appendChild(div);
+		div.classList.add("notThin", "fat-border");
+		if ($i === 7) div.classList.add("thin-border");
+		div.ngstyle = {"--fatOrder": $i};
+		div.ngstyle = {"font-style":"italic", "background-color":"lightgrey"};
+		div.textContent = $v;
+
+	});
 	
 	$d.forEach(($v) => {
 		
