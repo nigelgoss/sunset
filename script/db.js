@@ -29,7 +29,7 @@ const spinner = ($status) => {
 };
 
 const spinnerDiv = document.createElement("div");
-spinnerDiv.ngstyle = { backgroundColor:"grey", position:"absolute", top:"0", left:"0", width:"100%", height:"100%", placeItems:"center", display:"grid" };
+spinnerDiv.ngstyle = {"background-color":"grey", "position":"absolute", "top":"0", "left":"0", "width":"100%", "height":"100%", "place-items":"center", "display":"grid"};
 let span = document.createElement("span"); spinnerDiv.appendChild(span);
 span.textContent = "Please wait...";
 
