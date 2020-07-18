@@ -61,24 +61,59 @@ const build = ($d) => {
 
 	});
 	
-	$d.forEach(($v) => {
+	$d.forEach($v => {
 		
-		let td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Location;
-		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Name;
-		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.NHSNo;
-		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.HospitalNo;
-		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Birth;
-		td = document.createElement("div"); section.appendChild(td); td.textContent = $v.Death;
+		let os = $i * 15;
+	
+		[
+			{
+				label:{textContent:"Fridge",classList:[],style:{"--thinOrder":os+1}},
+				data:{textContent:"Fridge",classList:["fat-rowspan-2","fat-border"],style:{"--fatOrder":os+8,"--thinOrder":os+2}}
+			},{
+				label:{textContent:"Name",classList:[],style:{"--thinOrder":os+4}},
+				data:{textContent:"Name",classList:[],style:{"--fatOrder":os+9,"--thinOrder":os+5}}
+			},{
+				label:{textContent:"NHS No.",classList:[],style:{"--thinOrder":os+6}},
+				data:{textContent:"NHSNo",classList:[],style:{"--fatOrder":os+10,"--thinOrder":os+7}}
+			},{
+				label:{textContent:"Hospital No.",classList:[],style:{"--thinOrder":os+8}},
+				data:{textContent:"HospitalNo",classList:[],style:{"--fatOrder":os+11,"--thinOrder":os+8}}
+			},{
+				label:{textContent:"Born",classList:[],style:{"--thinOrder":os+9}},
+				data:{textContent:"Born",classList:[],style:{"--fatOrder":os+12,"--thinOrder":os+10}}
+			},{
+				label:{textContent:"Died",classList:[],style:{"--thinOrder":os+11}},
+				data:{textContent:"Died",classList:[],style:{"--fatOrder":os+13,"--thinOrder":os+12}}
+			},{
+				data:{classList:["fat-rowspan-2", "fat-border", "thin-rowspan-7", "thin-border"],style:{"--fatOrder":os+14,"--thinOrder":os+3}}
+			},{
+				label:{textContent:"Notes",classList:["thin-border"],style:{"--thinOrder":os+13}},
+				data:{textContent:"Notes",classList:["fat-colspan-5", "fat-border", "thin-border"],style:{"--fatOrder":os+15,"--thinOrder":os+14}}
+			}
+		].forEach(($v2, $i2) => {
 
-		td = document.createElement("div"); section.appendChild(td);
-		td.ngstyle = {"text-align":"right"};
-		let button = document.createElement("button"); td.appendChild(button);
-		button.ngstyle = {"border-radius":"999px"};
-		button.ngpointerdown = () => { $.nav.goTo("Episode Update", {"EPN":$v.EPN, "Episode":$v.Episode}); };
-			let span = document.createElement("span"); button.appendChild(span);
-			span.className = "faS";
-			span.textContent = "";
-		
+			let div;
+
+			if ($v2.label !== undefined) {
+				div = document.createElement("div"); section.appendChild(div);
+				div.classList.add("notFat", "label", ...$v2.label.classList);
+				div.ngstyle = $v2.label.style;
+				div.ngstyle = {"font-style":"italic", "background-color":"lightgrey"};
+				div.textContent = $v2.label.textContent;
+			};
+
+			div = document.createElement("div"); section.appendChild(div);
+			div.classList.add(($i % 2 === 0) ? "tbodyOdd" : "tbodyEven", ...$v2.data.classList);
+			div.ngstyle = $v2.data.style;
+			if ($v2.data.textContent !== undefined) div.textContent = $v[$v2.data.textContent];
+
+			if ($i2 === 6) {
+				let button = document.createElement("button"); div.appendChild(button);
+				button.textContent = ">";
+			};
+
+		});
+
 	});
 
 };
