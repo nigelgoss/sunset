@@ -110,10 +110,8 @@ divInput.ngstyle = {"flex":"1 1 auto", "display":"grid", "grid-template-columns"
 
 let button = document.createElement("button"); main.appendChild(button);
 button.ngstyle = {"flex":"0 0 auto", "width":"100%"};
-let span = document.createElement("span"); button.appendChild(span);
-span.className = "faS";
-span.textContent = "";
-button.appendChild(document.createTextNode(" Save"));
+button.className = "faS";
+button.textContent = " Save";
 button.ngpointerdown = () => {
 	console.log($.ngX.serialise(main));
 	$.nav.forceRefresh();
