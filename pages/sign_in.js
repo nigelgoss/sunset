@@ -31,7 +31,10 @@ input.autocomplete = "current-password";
 
 let button = document.createElement("button"); div.appendChild(button);
 button.ngstyle = {"grid-column":"1/-1"};
-button.textContent = "Sign In";
+let span = document.createElement("span"); button.appendChild(span);
+span.className = "faS";
+span.textContent = "";
+button.appendChild(document.createTextNode(" Sign In"));	
 button.ngpointerdown = () => {
 	if (form.reportValidity() === false) return;
 	$.nav.goTo("Patient List");
