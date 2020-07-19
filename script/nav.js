@@ -79,6 +79,12 @@ button.className = "faS";
 button.textContent = "";
 button.ngpointerdown = () => { $.nav.back("Patient List"); };
 
+button = document.createElement("button"); div.appendChild(button);
+button.ngstyle = {"border-radius":"999px"};
+button.className = "faS";
+button.textContent = "";
+button.ngpointerdown = () => { $.nav.goTo("Menu"); };
+
 let oldHeader = document.body.querySelector("header");
 oldHeader.parentNode.replaceChild(header, oldHeader);
   
