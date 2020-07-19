@@ -21,10 +21,10 @@ style.textContent = [
 	"main fieldset * { padding:2px; }",
 	"@media (max-width:399px) {",
 		/* NARROW */
-		"main fieldset > div { grid-template-columns":"auto"; }",
+		"main fieldset > div { grid-template-columns:auto; }",
 	"} @media (min-width:400px) {",
 		/* WIDE */
-		"main fieldset > div { grid-template-columns":"auto 1fr"; }",
+		"main fieldset > div { grid-template-columns:min-content 1fr; }",
 	"}"
 ].join("\n");	
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
