@@ -22,8 +22,8 @@ style.textContent = [
 	"}",
 	
 	"main section div { padding:10px; display:grid; align-items:center; }",
-	"main section .tbodyOdd { background-color:lightgreen; }",
-	"main section .tbodyEven { background-color:lightblue; }",
+	"main section .tbodyOdd { background-color:#ffffff; }",
+	"main section .tbodyEven { background-color:#eeeeee; }",
 
 	"@media (max-width:399px) {",
 		/* NARROW */
