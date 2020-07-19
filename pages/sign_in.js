@@ -19,13 +19,13 @@ div.ngstyle = {"display":"grid", "background-color":"rgb(255,255,255,0.67)", "pa
 
 let label = document.createElement("label"); div.appendChild(label); label.textContent = "Username";
 let input = document.createElement("input"); div.appendChild(input);
-input.type="text";
+input.type = "text";
 input.required = true;
 input.autocomplete = "username";
 	
 label = document.createElement("label"); div.appendChild(label); label.textContent = "Password";
 input = document.createElement("input"); div.appendChild(input);
-input.type="password";
+input.type = "password";
 input.required = true;
 input.autocomplete = "current-password";
 
