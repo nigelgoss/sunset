@@ -13,7 +13,6 @@ const main = document.createElement("main");
 main.ngstyle = {"flex":"1 1 100%", "display":"grid", "place-items":"center", "background":"url('resources/splash.jpg') no-repeat center center fixed", "background-size":"cover"};
 
 let form = document.createElement("form"); main.appendChild(form);
-form.onsubmit = () => { console.log(11111); return false; };
 	
 let div = document.createElement("div"); form.appendChild(div);
 div.ngstyle = {"display":"grid", "background-color":"rgb(255,255,255,0.67)", "padding":"20px", "border-radius":"10px", "grid-template-columns":"auto auto", "grid-gap":"5px"};
@@ -32,8 +31,8 @@ let button = document.createElement("button"); div.appendChild(button);
 button.ngstyle = {"grid-column":"1/-1"};
 button.textContent = "Sign In";
 button.ngpointerdown = () => {
-	form.submit();
-	//$.nav.goTo("Patient List");
+	if (form.reportValidity() === false) return;
+	$.nav.goTo("Patient List");
 };
 
 return {
