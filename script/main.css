@@ -8,8 +8,8 @@
 --tdEven:#EEEEEE;
 }
 
-.faR { font-family:FARegular, Helvetica; font-size:1.3em; }
-.faS { font-family:FASolid, Helvetica; font-size:1.3em; }
+.faR { font-family:FARegular, Helvetica; font-size:1.1em; }
+.faS { font-family:FASolid, Helvetica; font-size:1.1em; }
 
 * { font-family:Helvetica; box-sizing:border-box; }
 button { padding:10px; min-width:45px; min-height:45px; border:2px solid var(--background); color:var(--background); background-color:var(--button); border-radius:999px; }
