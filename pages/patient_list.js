@@ -55,8 +55,7 @@ const build = ($d) => {
 		let div = document.createElement("div"); section.appendChild(div);
 		div.classList.add("notThin", "fat-border");
 		if ($i === 7) div.classList.add("thin-border");
-		div.ngstyle = {"--fatOrder": $i};
-		div.ngstyle = {"font-style":"italic", "background-color":"lightgrey"};
+		div.ngstyle = {"--fatOrder":$i, "font-style":"italic", "background-color":"lightgrey", "postion":"sticky", "top":"0"};
 		div.textContent = $v;
 
 	});
