@@ -19,6 +19,13 @@ main.ngstyle = {"display":"flex", "flex-direction":"column", "flex":"1 1 100%", 
 let style = document.createElement("style"); main.appendChild(style);
 style.textContent = [
 	"main fieldset * { padding:2px; }",
+	"@media (max-width:399px) {",
+		/* NARROW */
+		"main fieldset > div { grid-template-columns":"auto"; }",
+	"} @media (min-width:400px) {",
+		/* WIDE */
+		"main fieldset > div { grid-template-columns":"auto 1fr"; }",
+	"}"
 ].join("\n");	
 const patientBanner = document.createElement("div"); main.appendChild(patientBanner);
 patientBanner.ngstyle = {"color":"#ffffff", "background-color":"#005EB8", "height":"70px", "flex":"0 0 auto"};
@@ -27,7 +34,7 @@ const episodeBanner = document.createElement("div"); main.appendChild(episodeBan
 episodeBanner.ngstyle = {"flex":"0 0 auto"};
 	
 let divInput = document.createElement("div"); main.appendChild(divInput);
-divInput.ngstyle = {"flex":"1 1 auto", "display":"grid", "grid-template-columns":"repeat(auto-fit, minmax(500px, 1fr))", "overflow":"auto", "border-top":"2px solid var(--background)", "border-bottom":"2px solid var(--background)"};
+divInput.ngstyle = {"flex":"1 1 auto", "display":"grid", "grid-template-columns":"repeat(auto-fit, minmax(300px, 1fr))", "overflow":"auto", "border-top":"2px solid var(--background)", "border-bottom":"2px solid var(--background)"};
 
 [
 	["Body Registration", [
@@ -92,7 +99,7 @@ divInput.ngstyle = {"flex":"1 1 auto", "display":"grid", "grid-template-columns"
 	legend.ngstyle = {"font-size":"1.2em", "font-weight":"bold", "border":"2px solid grey", "border-radius":"10px", "background-color":"#FAE100"};
 	legend.textContent = $v[0];
 	let div = document.createElement("div"); fieldset.appendChild(div);
-	div.ngstyle = {"display":"grid", "grid-template-columns":"auto 1fr", "grid-gap":"5px"};
+	div.ngstyle = {"display":"grid", "grid-gap":"5px"};
 	$v[1].forEach(($v2) => {
 		let label = document.createElement("label"); div.appendChild(label); label.textContent = $v2[0];
 		let ele = $v2[1]();
