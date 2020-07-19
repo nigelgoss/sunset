@@ -38,7 +38,7 @@ const updateViewport = ($ele) => {
 };
   
 let header = document.createElement("header");
-header.ngstyle = {"background-color":"var(--nhsblue)", "padding":"10px", "text-align":"center", "display":"flex", "border-bottom":"2px solid var(--background)", "flex":"0 0 auto"};
+header.ngstyle = {"background-color":"var(--nhsblue)", "padding":"1px", "text-align":"center", "display":"flex", "border-bottom":"2px solid var(--background)", "flex":"0 0 auto"};
 
 let div = document.createElement("div"); header.appendChild(div);
 div.ngstyle = {"flex":"0 0 auto"};
