@@ -45,7 +45,8 @@ Object.defineProperties(HTMLElement.prototype, {
 });
 
 [
-	"resources/splash.jpg"
+	"resources/splash.jpg",
+	"resources/spinner.png"
 ].forEach(($v) => {
 	let link = document.createElement("link"); document.head.appendChild(link);
 	link.href = $v;
