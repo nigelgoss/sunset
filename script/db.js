@@ -29,7 +29,7 @@ const spinner = ($status) => {
 };
 
 const spinnerDiv = document.createElement("div");
-spinnerDiv.ngstyle = {"background-color":"grey", "position":"absolute", "top":"0", "left":"0", "width":"100%", "height":"100%", "place-items":"center", "display":"grid"};
+spinnerDiv.ngstyle = {"position":"absolute", "top":"0", "left":"0", "width":"100%", "height":"100%", "place-items":"center", "display":"grid"};
 let img = document.createElement("img"); spinnerDiv.appendChild(img);
 img.src = "resources/spinner.png";
 img.ngstyle = {"animation":"transformRotate 2s infinite linear"};
